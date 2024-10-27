@@ -33,10 +33,27 @@
                 <h1 class="display-4">
                     {{ $lfk->Nama }}
                 </h1>
-                <p class="lead">{{$lfk->Nomor_induk}}
+                <p class="lead">{{ $lfk->Nomor_induk }}
                 </p>
             @endforeach
         </div>
+    </div>
+    <h2 class="text-center">meet our team</h2>
+    <div class="row justify-content-around">
+
+
+        @foreach ($pengurus as $pengurus)
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4>{{ $pengurus->nama }}</h4>
+                    <p class="card-text text-center">nim : {{ $pengurus->nim }} <br>
+                        prodi : {{ $pengurus->prodi }} <br>jabatan : {{ $pengurus->jabatan }}
+                    </p>
+                </div>
+            </div>
+        @endforeach
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
