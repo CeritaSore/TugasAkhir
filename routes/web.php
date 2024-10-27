@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrganisasiController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", [OrganisasiController::class,"index"]);
