@@ -39,6 +39,7 @@
         </div>
     </div>
     <h2 class="text-center">meet our team</h2>
+    <h2 class="text-center">meet our team</h2>
     <div class="row justify-content-around">
 
 
