@@ -13,11 +13,13 @@ return new class extends Migration {
         Schema::create('organization_token', function (Blueprint $table) {
             $table->id();
             $table->string('token');
-            $table->boolean('is_used');
+            $table->boolean('is_used')->default(0);
             $table->dateTime('expired_at');
+            $table->unsignedBigInteger('redeemed_by')->nullable();
             $table->unsignedBigInteger('organization_id')->nullable();
             $table->unsignedBigInteger('org_roles_id')->nullable();
             $table->unsignedBigInteger('kemahasiswaan_id')->nullable();
+            $table->foreign('redeemed_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('organization_id')->references('id')->on('organization')->onDelete('cascade');
             $table->foreign('org_roles_id')->references('id')->on('org_roles')->onDelete('cascade');
             $table->foreign('kemahasiswaan_id')->references('id')->on('users')->onDelete('cascade');

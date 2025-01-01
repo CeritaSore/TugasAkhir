@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Organization;
+use App\Models\Orgrole;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -29,6 +30,12 @@ class DatabaseSeeder extends Seeder
             Organization::create([
                 'nama' => $org,
                 'tanggal_berdiri' => fake()->date(),
+            ]);
+        }
+        $role = ['ketua', 'wakil', 'sekretaris', 'bendahara'];
+        foreach ($role as $item) {
+            Orgrole::create([
+                'role' => $item
             ]);
         }
     }

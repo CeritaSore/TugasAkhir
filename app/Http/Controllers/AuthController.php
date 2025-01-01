@@ -21,6 +21,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('dashboard');
         }
+        return redirect()->back()->with('error', 'ada yang salah bos');
     }
     public function logout(Request $request)
     {
