@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Organization;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +14,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $role = ['mahasiswa', 'kemahasiswaan'];
+        for ($i = 1; $i < 11; $i++) {
+            User::create([
+                'name' => fake()->name,
+                'email' => fake()->email,
+                'role' => fake()->randomElement($role),
+                'password' => 'password',
+            ]);
+        }
+        $organization = ['dpm', 'bem', 'senada'];
+        foreach ($organization as $org) {
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+            Organization::create([
+                'nama' => $org,
+                'tanggal_berdiri' => fake()->date(),
+            ]);
+        }
     }
 }

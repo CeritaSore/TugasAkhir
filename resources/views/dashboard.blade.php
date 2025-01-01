@@ -1,17 +1,11 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+@if (Auth::check() && Auth::user()->role === 'kemahasiswaan')
+    <h2>Hai, {{ Auth::user()->name }} </h2>
+    <a href="{{ route('create.token') }}">buat token</a>
+    <form action="{{ route('auth.logout') }}" method="post">
+        @csrf
+        <button type="submit">logout</button>
+    </form>
+@else
+    <a href="{{route('auth.login')}}">Login</a>
+@endif
+<h2>Welcome to the dashboard</h2>
