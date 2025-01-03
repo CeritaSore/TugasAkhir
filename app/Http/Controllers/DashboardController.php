@@ -15,5 +15,8 @@ class DashboardController extends Controller
         $alltoken = Orgtoken::all();
         return view("dashboard", compact('alltoken'));
     }
+    public function dashboardRedirect(){
+        return redirect()->route('dashboard');
+    }
    
 }

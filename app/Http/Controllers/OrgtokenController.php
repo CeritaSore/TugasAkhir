@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use id;
 use App\Models\Orgrole;
 use App\Models\Orgtoken;
 use App\Models\Organization;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class OrgtokenController extends Controller
 {
@@ -25,7 +25,8 @@ class OrgtokenController extends Controller
             'role' => 'required',
             'expired' => 'required',
         ]);
-        $randomtoken = Hash::make($request->token);
+        $randomtoken = base64_encode($request->token);
+
         $orgtoken = Orgtoken::create([
             'token' => $randomtoken,
             'expired_at' => $request->expired,
@@ -41,29 +42,24 @@ class OrgtokenController extends Controller
     public function storeRedeem(Request $request)
     {
         $request->validate([
-            'redeemtoken' => 'required|string',
+            'redeemtoken' => 'required',
         ]);
 
-        // Ambil semua token yang belum digunakan dari database
-        $listtoken = Orgtoken::where('is_used', 0)->get();
+        $getdata = Orgtoken::where('is_used', 0)->get();
 
-        // Variabel untuk menandai hasil pencarian
-        $isFound = false;
-
-        // Periksa apakah token yang diinput cocok dengan salah satu hash token
-        foreach ($listtoken as $token) {
-            if (Hash::check($request->redeemtoken, $token->token)) {
-                $isFound = true;
-                break;
+        foreach ($getdata as $data) {
+            $dekrip = base64_decode($data->token);
+            if ($dekrip == $request->redeemtoken) {
+                $data->is_used = 1;
+                $data->redeemed_by = Auth::user()->id;
+                $data->save();
+                return response()->json('token telah digunakan');
             }
+            return response()->json('token tidak cocok');
+            // return response()->json($request);
         }
 
-        // Tampilkan hasil token ditemukan atau tidak
-        if ($isFound) {
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Token ditemukan dan valid.',
-            ]);
-        }
+        // // Jika tidak ada token yang cocok
+        // return response()->json($getdata);
     }
 }

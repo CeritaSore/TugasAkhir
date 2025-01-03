@@ -7,6 +7,7 @@ use App\Http\Middleware\Checkrole;
 use App\Models\Orgtoken;
 use Illuminate\Support\Facades\Route;
 
+Route::get("/", [DashboardController::class, "dashboardRedirect"]);
 Route::get(
     '/dashboard',
     [DashboardController::class, 'index']
