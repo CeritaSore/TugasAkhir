@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Orgtoken extends Model
 {
     protected $table = 'organization_token';
-    protected $fillable = ['token', 'expired_at', 'organization_id', 'org_role_id'];
+    protected $fillable = ['token', 'expired_at', 'organization_id', 'org_roles_id', 'kemahasiswaan_id'];
 }
