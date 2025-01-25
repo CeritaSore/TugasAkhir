@@ -15,7 +15,10 @@ return new class extends Migration {
             $table->string('nama');
             $table->text('deskripsi')->nullable();
             $table->dateTime('tanggal_berdiri');
+<<<<<<< HEAD
             $table->enum('status',['aktif','nonaktif','tertunda'])->default('tertunda');
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
             $table->timestamps();
         });
     }

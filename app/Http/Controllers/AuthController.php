@@ -9,9 +9,12 @@ class AuthController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         if (Auth::check()) {
             return redirect()->intended('dashboard');
         }
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
         return view("login");
     }
     public function login(Request $request)
@@ -24,7 +27,10 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('dashboard');
         }
+<<<<<<< HEAD
         return redirect()->back()->with('error', 'ada yang salah bos');
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
     }
     public function logout(Request $request)
     {

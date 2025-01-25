@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form action="{{ route('save.token') }}" method="post">
     @csrf
     <label for="token">token</label>
@@ -25,5 +26,13 @@
     
     <label for="expired">expired</label>
     <input type="datetime-local" name="expired" id="expired">
+=======
+<form action="/savetoken" method="post">
+    @csrf
+    <label for="token">token</label>
+    <input type="text" id="token">
+    <label for="org">organisasi</label>
+    <input type="text" id="organisasi">
+>>>>>>> 47b3a8f (update repo & creating login)
     <button type="submit">save</button>
 </form>

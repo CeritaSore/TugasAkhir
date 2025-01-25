@@ -9,6 +9,7 @@ class Organization extends Model
     //
     protected $table = "organization";
     protected $fillable = ["nama", "deskripsi", "tanggal_berdiri"];
+<<<<<<< HEAD
     
     public static function updateOrganization($id, $data)
     {
@@ -19,4 +20,6 @@ class Organization extends Model
         $organization->save();
         return $organization;
     }
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
 }

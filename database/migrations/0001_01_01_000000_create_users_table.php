@@ -5,11 +5,15 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 return new class extends Migration {
 =======
 return new class extends Migration
 {
 >>>>>>> de896c1 (add laravel to repository)
+=======
+return new class extends Migration {
+>>>>>>> 47b3a8f (update repo & creating login)
     /**
      * Run the migrations.
      */
@@ -23,10 +27,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['kemahasiswaan', 'mahasiswa'])->default('mahasiswa');
+<<<<<<< HEAD
 =======
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
 >>>>>>> de896c1 (add laravel to repository)
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

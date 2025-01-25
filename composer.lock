@@ -5,10 +5,14 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "615b0f27dd95e80a7164358e4e7f6a4b",
 =======
     "content-hash": "3fb0155dfb50eb454c8a39124038cae6",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+    "content-hash": "615b0f27dd95e80a7164358e4e7f6a4b",
+>>>>>>> 47b3a8f (update repo & creating login)
     "packages": [
         {
             "name": "brick/math",
@@ -450,6 +454,7 @@
         {
             "name": "egulias/email-validator",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "4.0.3",
             "source": {
                 "type": "git",
@@ -462,16 +467,24 @@
                 "reference": "b115554301161fa21467629f1e1391c1936de517",
 =======
             "version": "4.0.2",
+=======
+            "version": "4.0.3",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "ebaaf5be6c0286928352e054f2d5125608e5405e"
+                "reference": "b115554301161fa21467629f1e1391c1936de517"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ebaaf5be6c0286928352e054f2d5125608e5405e",
                 "reference": "ebaaf5be6c0286928352e054f2d5125608e5405e",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b115554301161fa21467629f1e1391c1936de517",
+                "reference": "b115554301161fa21467629f1e1391c1936de517",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -518,10 +531,14 @@
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/egulias/EmailValidator/tree/4.0.3"
 =======
                 "source": "https://github.com/egulias/EmailValidator/tree/4.0.2"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/egulias/EmailValidator/tree/4.0.3"
+>>>>>>> 47b3a8f (update repo & creating login)
             },
             "funding": [
                 {
@@ -530,10 +547,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2024-12-27T00:36:43+00:00"
 =======
             "time": "2023-10-06T06:47:41+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+            "time": "2024-12-27T00:36:43+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "fruitcake/php-cors",
@@ -1082,6 +1103,7 @@
         {
             "name": "laravel/framework",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v11.39.1",
             "source": {
                 "type": "git",
@@ -1094,16 +1116,24 @@
                 "reference": "3d693dd36e78121bcd51fc02eda4bc137d2a17f2",
 =======
             "version": "v11.35.1",
+=======
+            "version": "v11.36.1",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "dcfa130ede1a6fa4343dc113410963e791ad34fb"
+                "reference": "df06f5163f4550641fdf349ebc04916a61135a64"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/laravel/framework/zipball/dcfa130ede1a6fa4343dc113410963e791ad34fb",
                 "reference": "dcfa130ede1a6fa4343dc113410963e791ad34fb",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/laravel/framework/zipball/df06f5163f4550641fdf349ebc04916a61135a64",
+                "reference": "df06f5163f4550641fdf349ebc04916a61135a64",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -1125,10 +1155,14 @@
                 "laravel/prompts": "^0.1.18|^0.2.0|^0.3.0",
                 "laravel/serializable-closure": "^1.3|^2.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "league/commonmark": "^2.6",
 =======
                 "league/commonmark": "^2.2.1",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "league/commonmark": "^2.6",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "league/flysystem": "^3.25.1",
                 "league/flysystem-local": "^3.25.1",
                 "league/uri": "^7.5.1",
@@ -1144,10 +1178,14 @@
                 "symfony/error-handler": "^7.0.3",
                 "symfony/finder": "^7.0.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/http-foundation": "^7.2.0",
 =======
                 "symfony/http-foundation": "^7.0.3",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "symfony/http-foundation": "^7.2.0",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "symfony/http-kernel": "^7.0.3",
                 "symfony/mailer": "^7.0.3",
                 "symfony/mime": "^7.0.3",
@@ -1317,6 +1355,7 @@
                 "source": "https://github.com/laravel/framework"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2025-01-22T17:01:46+00:00"
         },
         {
@@ -1333,6 +1372,9 @@
                 "reference": "749395fcd5f8f7530fe1f00dfa84eb22c83d94ea",
 =======
             "time": "2024-12-12T18:25:58+00:00"
+=======
+            "time": "2024-12-17T22:32:08+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "laravel/prompts",
@@ -1467,6 +1509,7 @@
         {
             "name": "laravel/serializable-closure",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v2.0.1",
             "source": {
                 "type": "git",
@@ -1479,16 +1522,24 @@
                 "reference": "613b2d4998f85564d40497e05e89cb6d9bd1cbe8",
 =======
             "version": "v2.0.0",
+=======
+            "version": "v2.0.1",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "0d8d3d8086984996df86596a86dea60398093a81"
+                "reference": "613b2d4998f85564d40497e05e89cb6d9bd1cbe8"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/0d8d3d8086984996df86596a86dea60398093a81",
                 "reference": "0d8d3d8086984996df86596a86dea60398093a81",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/613b2d4998f85564d40497e05e89cb6d9bd1cbe8",
+                "reference": "613b2d4998f85564d40497e05e89cb6d9bd1cbe8",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -1537,10 +1588,14 @@
                 "source": "https://github.com/laravel/serializable-closure"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2024-12-16T15:26:28+00:00"
 =======
             "time": "2024-11-19T01:38:44+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+            "time": "2024-12-16T15:26:28+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "laravel/tinker",
@@ -1611,6 +1666,7 @@
         {
             "name": "league/commonmark",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "2.6.1",
             "source": {
                 "type": "git",
@@ -1623,16 +1679,24 @@
                 "reference": "d990688c91cedfb69753ffc2512727ec646df2ad",
 =======
             "version": "2.6.0",
+=======
+            "version": "2.6.1",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "d150f911e0079e90ae3c106734c93137c184f932"
+                "reference": "d990688c91cedfb69753ffc2512727ec646df2ad"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d150f911e0079e90ae3c106734c93137c184f932",
                 "reference": "d150f911e0079e90ae3c106734c93137c184f932",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d990688c91cedfb69753ffc2512727ec646df2ad",
+                "reference": "d990688c91cedfb69753ffc2512727ec646df2ad",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -1727,10 +1791,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2024-12-29T14:10:59+00:00"
 =======
             "time": "2024-12-07T15:34:16+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+            "time": "2024-12-29T14:10:59+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "league/config",
@@ -2282,6 +2350,7 @@
         {
             "name": "nesbot/carbon",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "3.8.4",
             "source": {
                 "type": "git",
@@ -2294,16 +2363,24 @@
                 "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
 =======
             "version": "3.8.2",
+=======
+            "version": "3.8.4",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "e1268cdbc486d97ce23fef2c666dc3c6b6de9947"
+                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e1268cdbc486d97ce23fef2c666dc3c6b6de9947",
                 "reference": "e1268cdbc486d97ce23fef2c666dc3c6b6de9947",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
+                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -2336,12 +2413,15 @@
             "type": "library",
             "extra": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 "branch-alias": {
                     "dev-master": "3.x-dev",
                     "dev-2.x": "2.x-dev"
                 },
 >>>>>>> de896c1 (add laravel to repository)
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "laravel": {
                     "providers": [
                         "Carbon\\Laravel\\ServiceProvider"
@@ -2352,12 +2432,18 @@
                         "extension.neon"
                     ]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 },
                 "branch-alias": {
                     "dev-2.x": "2.x-dev",
                     "dev-master": "3.x-dev"
+<<<<<<< HEAD
 =======
 >>>>>>> de896c1 (add laravel to repository)
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 }
             },
             "autoload": {
@@ -2407,10 +2493,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2024-12-27T09:25:35+00:00"
 =======
             "time": "2024-11-07T17:46:48+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+            "time": "2024-12-27T09:25:35+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "nette/schema",
@@ -2563,6 +2653,7 @@
         {
             "name": "nikic/php-parser",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v5.4.0",
             "source": {
                 "type": "git",
@@ -2575,16 +2666,24 @@
                 "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
 =======
             "version": "v5.3.1",
+=======
+            "version": "v5.4.0",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "8eea230464783aa9671db8eea6f8c6ac5285794b"
+                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/8eea230464783aa9671db8eea6f8c6ac5285794b",
                 "reference": "8eea230464783aa9671db8eea6f8c6ac5285794b",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
+                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -2628,6 +2727,7 @@
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
             },
             "time": "2024-12-30T11:07:19+00:00"
@@ -2636,6 +2736,11 @@
             },
             "time": "2024-10-08T18:51:32+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
+            },
+            "time": "2024-12-30T11:07:19+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "nunomaduro/termwind",
@@ -3767,10 +3872,14 @@
             "type": "library",
             "extra": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "thanks": {
                     "url": "https://github.com/symfony/contracts",
                     "name": "symfony/contracts"
                 },
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-main": "3.5-dev"
 =======
@@ -3781,6 +3890,10 @@
                     "name": "symfony/contracts",
                     "url": "https://github.com/symfony/contracts"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "branch-alias": {
+                    "dev-main": "3.5-dev"
+>>>>>>> 47b3a8f (update repo & creating login)
                 }
             },
             "autoload": {
@@ -3999,10 +4112,14 @@
             "type": "library",
             "extra": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "thanks": {
                     "url": "https://github.com/symfony/contracts",
                     "name": "symfony/contracts"
                 },
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-main": "3.5-dev"
 =======
@@ -4013,6 +4130,10 @@
                     "name": "symfony/contracts",
                     "url": "https://github.com/symfony/contracts"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "branch-alias": {
+                    "dev-main": "3.5-dev"
+>>>>>>> 47b3a8f (update repo & creating login)
                 }
             },
             "autoload": {
@@ -4066,6 +4187,7 @@
         {
             "name": "symfony/finder",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v7.2.2",
             "source": {
                 "type": "git",
@@ -4078,16 +4200,24 @@
                 "reference": "87a71856f2f56e4100373e92529eed3171695cfb",
 =======
             "version": "v7.2.0",
+=======
+            "version": "v7.2.2",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "6de263e5868b9a137602dd1e33e4d48bfae99c49"
+                "reference": "87a71856f2f56e4100373e92529eed3171695cfb"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/finder/zipball/6de263e5868b9a137602dd1e33e4d48bfae99c49",
                 "reference": "6de263e5868b9a137602dd1e33e4d48bfae99c49",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/symfony/finder/zipball/87a71856f2f56e4100373e92529eed3171695cfb",
+                "reference": "87a71856f2f56e4100373e92529eed3171695cfb",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -4123,10 +4253,14 @@
             "homepage": "https://symfony.com",
             "support": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/finder/tree/v7.2.2"
 =======
                 "source": "https://github.com/symfony/finder/tree/v7.2.0"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/symfony/finder/tree/v7.2.2"
+>>>>>>> 47b3a8f (update repo & creating login)
             },
             "funding": [
                 {
@@ -4142,6 +4276,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2024-12-30T19:00:17+00:00"
         },
@@ -4159,20 +4294,28 @@
                 "reference": "62d1a43796ca3fea3f83a8470dfe63a4af3bc588",
 =======
             "time": "2024-10-23T06:56:12+00:00"
+=======
+            "time": "2024-12-30T19:00:17+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v7.2.0",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "e88a66c3997859532bc2ddd6dd8f35aba2711744"
+                "reference": "62d1a43796ca3fea3f83a8470dfe63a4af3bc588"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/http-foundation/zipball/e88a66c3997859532bc2ddd6dd8f35aba2711744",
                 "reference": "e88a66c3997859532bc2ddd6dd8f35aba2711744",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/62d1a43796ca3fea3f83a8470dfe63a4af3bc588",
+                "reference": "62d1a43796ca3fea3f83a8470dfe63a4af3bc588",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -4222,10 +4365,14 @@
             "homepage": "https://symfony.com",
             "support": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/http-foundation/tree/v7.2.2"
 =======
                 "source": "https://github.com/symfony/http-foundation/tree/v7.2.0"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/symfony/http-foundation/tree/v7.2.2"
+>>>>>>> 47b3a8f (update repo & creating login)
             },
             "funding": [
                 {
@@ -4241,6 +4388,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2024-12-30T19:00:17+00:00"
         },
@@ -4258,20 +4406,28 @@
                 "reference": "3c432966bd8c7ec7429663105f5a02d7e75b4306",
 =======
             "time": "2024-11-13T18:58:46+00:00"
+=======
+            "time": "2024-12-30T19:00:17+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v7.2.1",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "d8ae58eecae44c8e66833e76cc50a4ad3c002d97"
+                "reference": "3c432966bd8c7ec7429663105f5a02d7e75b4306"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/d8ae58eecae44c8e66833e76cc50a4ad3c002d97",
                 "reference": "d8ae58eecae44c8e66833e76cc50a4ad3c002d97",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/3c432966bd8c7ec7429663105f5a02d7e75b4306",
+                "reference": "3c432966bd8c7ec7429663105f5a02d7e75b4306",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -4357,10 +4513,14 @@
             "homepage": "https://symfony.com",
             "support": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/http-kernel/tree/v7.2.2"
 =======
                 "source": "https://github.com/symfony/http-kernel/tree/v7.2.1"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/symfony/http-kernel/tree/v7.2.2"
+>>>>>>> 47b3a8f (update repo & creating login)
             },
             "funding": [
                 {
@@ -4377,10 +4537,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2024-12-31T14:59:40+00:00"
 =======
             "time": "2024-12-11T12:09:10+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+            "time": "2024-12-31T14:59:40+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "symfony/mailer",
@@ -5349,10 +5513,14 @@
             "type": "library",
             "extra": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "thanks": {
                     "url": "https://github.com/symfony/contracts",
                     "name": "symfony/contracts"
                 },
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-main": "3.5-dev"
 =======
@@ -5363,6 +5531,10 @@
                     "name": "symfony/contracts",
                     "url": "https://github.com/symfony/contracts"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "branch-alias": {
+                    "dev-main": "3.5-dev"
+>>>>>>> 47b3a8f (update repo & creating login)
                 }
             },
             "autoload": {
@@ -5506,6 +5678,7 @@
         {
             "name": "symfony/translation",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v7.2.2",
             "source": {
                 "type": "git",
@@ -5518,16 +5691,24 @@
                 "reference": "e2674a30132b7cc4d74540d6c2573aa363f05923",
 =======
             "version": "v7.2.0",
+=======
+            "version": "v7.2.2",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "dc89e16b44048ceecc879054e5b7f38326ab6cc5"
+                "reference": "e2674a30132b7cc4d74540d6c2573aa363f05923"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/translation/zipball/dc89e16b44048ceecc879054e5b7f38326ab6cc5",
                 "reference": "dc89e16b44048ceecc879054e5b7f38326ab6cc5",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/symfony/translation/zipball/e2674a30132b7cc4d74540d6c2573aa363f05923",
+                "reference": "e2674a30132b7cc4d74540d6c2573aa363f05923",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -5594,10 +5775,14 @@
             "homepage": "https://symfony.com",
             "support": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/translation/tree/v7.2.2"
 =======
                 "source": "https://github.com/symfony/translation/tree/v7.2.0"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/symfony/translation/tree/v7.2.2"
+>>>>>>> 47b3a8f (update repo & creating login)
             },
             "funding": [
                 {
@@ -5614,10 +5799,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2024-12-07T08:18:10+00:00"
 =======
             "time": "2024-11-12T20:47:56+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+            "time": "2024-12-07T08:18:10+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "symfony/translation-contracts",
@@ -5639,10 +5828,14 @@
             "type": "library",
             "extra": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "thanks": {
                     "url": "https://github.com/symfony/contracts",
                     "name": "symfony/contracts"
                 },
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-main": "3.5-dev"
 =======
@@ -5653,6 +5846,10 @@
                     "name": "symfony/contracts",
                     "url": "https://github.com/symfony/contracts"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "branch-alias": {
+                    "dev-main": "3.5-dev"
+>>>>>>> 47b3a8f (update repo & creating login)
                 }
             },
             "autoload": {
@@ -5866,6 +6063,7 @@
         {
             "name": "tijsverkoyen/css-to-inline-styles",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v2.3.0",
             "source": {
                 "type": "git",
@@ -5878,21 +6076,30 @@
                 "reference": "0d72ac1c00084279c1816675284073c5a337c20d",
 =======
             "version": "v2.2.7",
+=======
+            "version": "v2.3.0",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-                "reference": "83ee6f38df0a63106a9e4536e3060458b74ccedb"
+                "reference": "0d72ac1c00084279c1816675284073c5a337c20d"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/83ee6f38df0a63106a9e4536e3060458b74ccedb",
                 "reference": "83ee6f38df0a63106a9e4536e3060458b74ccedb",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/0d72ac1c00084279c1816675284073c5a337c20d",
+                "reference": "0d72ac1c00084279c1816675284073c5a337c20d",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "php": "^7.4 || ^8.0",
                 "symfony/css-selector": "^5.4 || ^6.0 || ^7.0"
@@ -5908,15 +6115,28 @@
             "require-dev": {
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0 || ^7.5 || ^8.5.21 || ^9.5.10"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "php": "^7.4 || ^8.0",
+                "symfony/css-selector": "^5.4 || ^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^8.5.21 || ^9.5.10"
+>>>>>>> 47b3a8f (update repo & creating login)
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "2.x-dev"
 =======
                     "dev-master": "2.2.x-dev"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                    "dev-master": "2.x-dev"
+>>>>>>> 47b3a8f (update repo & creating login)
                 }
             },
             "autoload": {
@@ -5940,6 +6160,7 @@
             "support": {
                 "issues": "https://github.com/tijsverkoyen/CssToInlineStyles/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
             },
             "time": "2024-12-21T16:25:41+00:00"
@@ -5948,6 +6169,11 @@
             },
             "time": "2023-12-08T13:03:43+00:00"
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
+            },
+            "time": "2024-12-21T16:25:41+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "vlucas/phpdotenv",
@@ -6612,6 +6838,7 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "name": "laravel/breeze",
             "version": "v2.2.6",
@@ -6675,6 +6902,8 @@
         },
         {
 >>>>>>> de896c1 (add laravel to repository)
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
             "name": "laravel/pail",
             "version": "v1.2.1",
             "source": {
@@ -6755,6 +6984,7 @@
         {
             "name": "laravel/pint",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v1.20.0",
             "source": {
                 "type": "git",
@@ -6767,16 +6997,24 @@
                 "reference": "53072e8ea22213a7ed168a8a15b96fbb8b82d44b",
 =======
             "version": "v1.18.3",
+=======
+            "version": "v1.19.0",
+>>>>>>> 47b3a8f (update repo & creating login)
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "cef51821608239040ab841ad6e1c6ae502ae3026"
+                "reference": "8169513746e1bac70c85d6ea1524d9225d4886f0"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/laravel/pint/zipball/cef51821608239040ab841ad6e1c6ae502ae3026",
                 "reference": "cef51821608239040ab841ad6e1c6ae502ae3026",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+                "url": "https://api.github.com/repos/laravel/pint/zipball/8169513746e1bac70c85d6ea1524d9225d4886f0",
+                "reference": "8169513746e1bac70c85d6ea1524d9225d4886f0",
+>>>>>>> 47b3a8f (update repo & creating login)
                 "shasum": ""
             },
             "require": {
@@ -6788,16 +7026,22 @@
             },
             "require-dev": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "friendsofphp/php-cs-fixer": "^3.66.0",
                 "illuminate/view": "^10.48.25",
                 "larastan/larastan": "^2.9.12",
                 "laravel-zero/framework": "^10.48.25",
+<<<<<<< HEAD
 =======
                 "friendsofphp/php-cs-fixer": "^3.65.0",
                 "illuminate/view": "^10.48.24",
                 "larastan/larastan": "^2.9.11",
                 "laravel-zero/framework": "^10.4.0",
 >>>>>>> de896c1 (add laravel to repository)
+=======
+>>>>>>> 47b3a8f (update repo & creating login)
                 "mockery/mockery": "^1.6.12",
                 "nunomaduro/termwind": "^1.17.0",
                 "pestphp/pest": "^2.36.0"
@@ -6837,6 +7081,7 @@
                 "source": "https://github.com/laravel/pint"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2025-01-14T16:20:53+00:00"
         },
         {
@@ -6853,6 +7098,9 @@
                 "reference": "237e70656d8eface4839de51d101284bd5d0cf71",
 =======
             "time": "2024-11-26T15:34:00+00:00"
+=======
+            "time": "2024-12-30T16:20:10+00:00"
+>>>>>>> 47b3a8f (update repo & creating login)
         },
         {
             "name": "laravel/sail",
