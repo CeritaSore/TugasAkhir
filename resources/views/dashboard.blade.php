@@ -1,14 +1,24 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
 @if (Auth::check())
     <h2>Hai, {{ Auth::user()->name }}</h2>
 
     @if (Auth::user()->role === 'kemahasiswaan')
         <a href="{{ route('create.token') }}">Buat Token</a>
+<<<<<<< HEAD
         <a href="{{ route('show.organisasi') }}">Buat organisasi</a>
     @elseif($showRedeemButton)
     <h2>you have 1 token for reedem to get access to another feature</h2>
         <a href="{{route('show.redeem')}}">Reedem Token</a>
+=======
+    @endif
+    @if (Auth::user()->role === 'mahasiswa')
+        <p>punya token redeem?</p>
+        <a href="{{ route('show.redeem') }}">redeem Token</a>
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
     @endif
     <form action="{{ route('auth.logout') }}" method="post">
         @csrf
@@ -37,6 +47,7 @@
             @endforeach
         </tbody>
     </table>
+<<<<<<< HEAD
     <table>
         <thead>
             <tr>
@@ -84,3 +95,6 @@
 @endif
 <h2>Welcome to the dashboard</h2>
 >>>>>>> 47b3a8f (update repo & creating login)
+=======
+@endif
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b

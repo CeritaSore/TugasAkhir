@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Organization;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\Orgcoreteam;
 use App\Models\Orgrole;
 =======
@@ -12,6 +13,12 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Nette\Utils\Random;
+=======
+use App\Models\Orgrole;
+use App\Models\User;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,17 +29,23 @@ class DatabaseSeeder extends Seeder
     {
         $role = ['mahasiswa', 'kemahasiswaan'];
 <<<<<<< HEAD
+<<<<<<< HEAD
         $constantNumber = "0110";
 =======
 >>>>>>> 47b3a8f (update repo & creating login)
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
         for ($i = 1; $i < 11; $i++) {
             User::create([
                 'name' => fake()->name,
                 'email' => fake()->email,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'nim' => $constantNumber . random_int(1000, 9999),
 =======
 >>>>>>> 47b3a8f (update repo & creating login)
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
                 'role' => fake()->randomElement($role),
                 'password' => 'password',
             ]);
@@ -46,12 +59,16 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
         $role = ['ketua', 'wakil', 'sekretaris', 'bendahara'];
         foreach ($role as $item) {
             Orgrole::create([
                 'role' => $item
             ]);
         }
+<<<<<<< HEAD
         $getmhs = User::where('role', 'mahasiswa')->get();
         foreach ($getmhs as $mhs) {
             Orgcoreteam::create([
@@ -62,5 +79,7 @@ class DatabaseSeeder extends Seeder
         }
 =======
 >>>>>>> 47b3a8f (update repo & creating login)
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
     }
 }

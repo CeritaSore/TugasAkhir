@@ -10,6 +10,7 @@ class Organization extends Model
     protected $table = "organization";
     protected $fillable = ["nama", "deskripsi", "tanggal_berdiri"];
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     public static function updateOrganization($id, $data)
     {
@@ -22,4 +23,6 @@ class Organization extends Model
     }
 =======
 >>>>>>> 47b3a8f (update repo & creating login)
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
 }

@@ -18,11 +18,14 @@
         "fakerphp/faker": "^1.23",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "laravel/breeze": "^2.2",
 >>>>>>> de896c1 (add laravel to repository)
 =======
 >>>>>>> 47b3a8f (update repo & creating login)
+=======
+>>>>>>> 320b1045e0f2c1096493f18dd60522f3c2c6da9b
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
