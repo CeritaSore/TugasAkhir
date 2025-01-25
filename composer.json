@@ -16,6 +16,10 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+<<<<<<< HEAD
+=======
+        "laravel/breeze": "^2.2",
+>>>>>>> de896c1 (add laravel to repository)
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",

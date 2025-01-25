@@ -4,7 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+<<<<<<< HEAD
 return new class extends Migration {
+=======
+return new class extends Migration
+{
+>>>>>>> de896c1 (add laravel to repository)
     /**
      * Run the migrations.
      */
@@ -13,10 +18,15 @@ return new class extends Migration {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+<<<<<<< HEAD
             $table->string('nim');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['kemahasiswaan', 'mahasiswa'])->default('mahasiswa');
+=======
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+>>>>>>> de896c1 (add laravel to repository)
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

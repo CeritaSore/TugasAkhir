@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Organization;
 use App\Models\Orgcoreteam;
-use App\Models\Orgmember;
 use App\Models\Orgrole;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
