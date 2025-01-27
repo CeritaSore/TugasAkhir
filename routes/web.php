@@ -27,5 +27,7 @@ Route::middleware(Checkrole::class . ':mahasiswa')->group(function () {
     Route::post('/dashboard/redeem/save', [OrgtokenController::class, 'storeRedeem'])->name('save.redeem');
 });
 Route::get('/login', [AuthController::class, 'index'])->name('view.login');
+Route::get('/register', [AuthController::class, 'registration'])->name('view.register');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/auth/register', [AuthController::class, 'saveregister'])->name('auth.register');
 Route::post('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');

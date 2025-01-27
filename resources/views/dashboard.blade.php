@@ -5,7 +5,7 @@
         <a href="{{ route('create.token') }}">Buat Token</a>
         <a href="{{ route('show.organisasi') }}">Buat organisasi</a>
     @elseif($showRedeemButton)
-    <h2>you have 1 token for reedem to get access to another feature</h2>
+        <h2>you have 1 token for reedem to get access to another feature</h2>
         <a href="{{route('show.redeem')}}">Reedem Token</a>
     @endif
     <form action="{{ route('auth.logout') }}" method="post">

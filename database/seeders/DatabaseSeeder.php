@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         $role = ['mahasiswa', 'kemahasiswaan'];
         $constantNumber = "0110";
-        for ($i = 1; $i < 11; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             User::create([
                 'name' => fake()->name,
                 'email' => fake()->email,

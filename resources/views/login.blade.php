@@ -10,3 +10,4 @@
     <input type="password" minlength="5" required id="password" name="password">
     <button type="submit">login</button>
 </form>
+<p>belum punya akun? <a href="{{route('view.register')}}">regisrasi</a></p>
