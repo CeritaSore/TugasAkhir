@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            return redirect()->intended('dashboard');
+            return redirect(route('dashboard'));
         }
         return view("login");
     }

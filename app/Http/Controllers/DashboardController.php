@@ -40,14 +40,16 @@ class DashboardController extends Controller
     {
         return view('index');
     }
-    // public function dashboardRedirect()
-    // {
-    //     if(Auth::check()){
-    //         $checkrole = Auth::user()->role;
-    //         return redirect()->route(`dashboard.{$checkrole}`);
-
-    //     }
-    // }
+    public function dashboardRedirect()
+    {
+        if(Auth::check()){
+            $checkrole = Auth::user()->role;
+            return redirect(route("dashboard.$checkrole"));
+        }
+        else{
+            return redirect()->route('view.login');
+        }
+    }
 }
 
 // $viewData = [
