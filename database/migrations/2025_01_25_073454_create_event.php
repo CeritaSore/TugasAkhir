@@ -14,14 +14,12 @@ return new class extends Migration
         Schema::create('event', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('event_type_id');
+            $table->foreignId('event_type_id')->nullable()->constrained('event_type')->nullOnDelete();
             $table->string('description');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->unsignedBigInteger('created_by');
+            $table->foreignId('created_by_organization_id')->constrained('organization');
             $table->timestamps();
-            $table->foreign('event_type_id')->references('id')->on('event_type');
-            $table->foreign('created_by')->references('id')->on('organization');
         });
     }
 

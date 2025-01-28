@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('event_coreteam', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('event_id');
+            $table->foreignId('event_id')->constrained('event');
             $table->unsignedBigInteger('org_member_id');
             $table->timestamps();
         });
