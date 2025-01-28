@@ -21,8 +21,20 @@ class Orgtoken extends Model
     {
         return Orgtoken::where('created_for', $id)->where('status', 0)->get();
     }
-    public function users()
+    public function creator()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'created_for');
+    }
+    public function receiver()
+    {
+        return $this->belongsTo(User::class,'created_by');
+    }
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
+    }
+    public function roles()
+    {
+        return $this->belongsTo(Orgrole::class);
     }
 }

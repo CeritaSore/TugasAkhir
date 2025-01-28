@@ -19,4 +19,8 @@ class Organization extends Model
         $organization->save();
         return $organization;
     }
+    public function orgtoken()
+    {
+        return $this->hasMany(Orgtoken::class);
+    }
 }

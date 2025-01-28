@@ -17,7 +17,7 @@ class OrgtokenController extends Controller
         $org = Organization::all();
         $users = User::where('role', 'mahasiswa')->get();
         $role = Orgrole::all();
-        return view('token', compact('org', 'role', 'users'));
+        return view('kemahasiswaan.token', compact('org', 'role', 'users'));
     }
     public function storeToken(Request $request)
     {

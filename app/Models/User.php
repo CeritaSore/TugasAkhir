@@ -46,4 +46,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function orgtoken()
+    {
+        return $this->hasMany(orgtoken::class);
+    }
 }
