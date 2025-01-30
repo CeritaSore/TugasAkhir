@@ -9,9 +9,9 @@ use App\Models\Orgtoken;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('index');
-Route::get('/dashboard', [DashboardController::class, 'dashboardRedirect'])->name('dashboard');
+// Route::get('/dashboard', [DashboardController::class, 'dashboardRedirect'])->name('dashboard');
 Route::middleware(Checkrole::class . ':kemahasiswaan')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'indexKema'])->name('dashboard.kemahasiswaan');
+    Route::get('/dashboard/kema', [DashboardController::class, 'indexKema'])->name('dashboard.kemahasiswaan');
     Route::get('/dashboard/token', [OrgtokenController::class, 'index'])->name('create.token');
     Route::post('/dashboard/token/save', [OrgtokenController::class, 'storeToken'])->name('save.token');
     Route::get('/dashboard/organisasi', [KemahasiswaanController::class, 'index'])->name('show.organisasi');
@@ -24,6 +24,7 @@ Route::middleware(Checkrole::class . ':mahasiswa')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'indexMahasiswa'])->name('dashboard.mahasiswa');
     Route::get('/dashboard/redeem', [OrgtokenController::class, 'showredeem'])->name('show.redeem');
     Route::post('/dashboard/redeem/save', [OrgtokenController::class, 'storeRedeem'])->name('save.redeem');
+    Route::get('/dashboard/organisasi', [DashboardController::class, 'indexOrganisasi'])->name('dashboard.organisasi');
 });
 Route::get('/login', [AuthController::class, 'index'])->name('view.login');
 Route::get('/register', [AuthController::class, 'registration'])->name('view.register');

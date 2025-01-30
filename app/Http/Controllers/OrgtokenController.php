@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use id;
+use App\Models\User;
 use App\Models\Orgrole;
 use App\Models\Orgtoken;
+use App\Models\Orgcoreteam;
 use App\Models\Organization;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,18 +39,20 @@ class OrgtokenController extends Controller
             'organization_id' => $request->organisasi,
             'expired_at' => $request->expired,
         ]);
-        return redirect()->route('dashboard')->with('success', 'token didaftarkan');
+
+        return redirect()->route('dashboard.kemahasiswaan')->with('success', 'token didaftarkan');
     }
     public function showredeem()
     {
 
-        return view('redeem');
+        return view('mahasiswa.redeem');
     }
     public function storeRedeem(Request $request)
     {
         $request->validate([
             'redeemtoken' => 'required',
         ]);
+
 
         $getdata = Orgtoken::where('created_for', Auth::user()->id)
             ->where('status', 0)
@@ -59,7 +62,7 @@ class OrgtokenController extends Controller
             if ($dekrip == $request->redeemtoken) {
                 $data->status = 1;
                 $data->save();
-                return response()->json('token telah digunakan');
+                return redirect()->route('dashboard.mahasiswa')->with('success', 'token berhasil digunakan');
             }
             return response()->json('token tidak cocok');
         }

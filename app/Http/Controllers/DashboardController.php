@@ -23,43 +23,18 @@ class DashboardController extends Controller
     }
     public function indexMahasiswa()
     {
-        $viewData = [
-            'showRedeemButton' => false // Default: tidak menampilkan tombol
-        ];
-        if (Auth::user()->role === 'mahasiswa') {
-            $user = Auth::user();
-            $token = Orgtoken::notify(Auth::user()->id);
-            if ($token) {
-                $viewData['showRedeemButton'] = true;
-            }
-            // return view('mahasiswa.dashboard', $viewData);
-            return view('mahasiswa.dashboard', $viewData, compact('user'));
-        }
+        $user = Auth::user();
+        $notify = Orgtoken::notify($user->id);
+        $hasAccess = Orgtoken::grantingAccess();
+        return view('mahasiswa.dashboard', compact('notify','hasAccess'));
     }
+
     public function index()
     {
         return view('index');
     }
-    // public function dashboardRedirect()
-    // {
-    //     if(Auth::check()){
-    //         $checkrole = Auth::user()->role;
-    //         return redirect()->route(`dashboard.{$checkrole}`);
-
-    //     }
-    // }
+    public function indexOrganisasi()
+    {
+        return view('organization.index');
+    }
 }
-
-// $viewData = [
-//     'showRedeemButton' => false // Default: tidak menampilkan tombol
-// ];
-// $alltoken = Orgtoken::all();
-// if (Auth::check() && Auth::user()->role === 'mahasiswa') {
-//     $token = Orgtoken::notify(Auth::user()->id);
-//     if ($token) {
-//         $viewData['showRedeemButton'] = true;
-//     }
-//     return view('mahasiswa.dashboard', $viewData);
-// }
-
-// return view('kemahasiswaan.dashboard', $viewData, compact('alltoken'));

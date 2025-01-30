@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('nama');
             $table->text('deskripsi')->nullable();
             $table->dateTime('tanggal_berdiri');
-            $table->enum('status',['aktif','nonaktif','tertunda'])->default('tertunda');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

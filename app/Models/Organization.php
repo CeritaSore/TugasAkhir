@@ -23,4 +23,8 @@ class Organization extends Model
     {
         return $this->hasMany(Orgtoken::class);
     }
+    public function orgcoreteam()
+    {
+        return $this->hasMany(Orgcoreteam::class);
+    }
 }

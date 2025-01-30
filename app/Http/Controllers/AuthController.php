@@ -23,7 +23,7 @@ class AuthController extends Controller
         ]);
         if (Auth::attempt($validation)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         }
         return redirect()->back()->with('error', 'ada yang salah bos');
     }
@@ -51,6 +51,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->intended('dashboard');
+        return redirect()->intended('/');
     }
 }
