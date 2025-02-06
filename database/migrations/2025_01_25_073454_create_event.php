@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -19,6 +21,7 @@ return new class extends Migration
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->unsignedBigInteger('created_by');
+            $table->enum('status', ['draft', 'ongoing', 'done', 'upcoming'])->default('draft');
             $table->timestamps();
             $table->foreign('event_type_id')->references('id')->on('event_type');
             $table->foreign('created_by')->references('id')->on('organization');

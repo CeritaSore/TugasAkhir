@@ -7,13 +7,14 @@
                  <p>Selamat datang di dashboard mahasiswa {{ Auth::user()->name }}</p>
              </div>
          </div>
+
          @if ($notify->isNotEmpty())
              <h2>1 token tersedia untuk di redeem</h2>
-             <a href="{{ route('show.redeem') }}" class="btn btn-primary mb-3">Redeem Sekarang</a>
+             <a href="{{ route('show.redeem', Auth::user()->nim) }}" class="btn btn-primary mb-3">Redeem Sekarang</a>
          @endif
 
          @if ($hasAccess)
-             <a href="{{ route('dashboard.organisasi') }}" class="btn btn-primary">Kelola Organisasi</a>
+             <a href="{{ route('dashboard.organisasi', Auth::user()->nim) }}" class="btn btn-primary">Kelola Organisasi</a>
          @endif
 
          <form action="{{ route('auth.logout') }}" method="post">

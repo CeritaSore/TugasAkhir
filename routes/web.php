@@ -3,8 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KemahasiswaanController;
+use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\OrgtokenController;
 use App\Http\Middleware\Checkrole;
+use App\Models\Organization;
 use App\Models\Orgtoken;
 use Illuminate\Support\Facades\Route;
 
@@ -14,17 +16,18 @@ Route::middleware(Checkrole::class . ':kemahasiswaan')->group(function () {
     Route::get('/dashboard/kema', [DashboardController::class, 'indexKema'])->name('dashboard.kemahasiswaan');
     Route::get('/dashboard/token', [OrgtokenController::class, 'index'])->name('create.token');
     Route::post('/dashboard/token/save', [OrgtokenController::class, 'storeToken'])->name('save.token');
-    Route::get('/dashboard/organisasi', [KemahasiswaanController::class, 'index'])->name('show.organisasi');
+    Route::get('/dashboard/organisasi', [OrganizationController::class, 'index'])->name('show.organisasi');
     Route::get('/dashboard/organisasi/create', [KemahasiswaanController::class, 'create'])->name('kemahasiswaan.create');
     Route::post('/dashboard/organisasi/store', [KemahasiswaanController::class, 'store'])->name('kemahasiswaan.store');
     Route::get('/dashboard/organisasi/edit/{id}', [KemahasiswaanController::class, 'find'])->name('kemahasiswaan.edit');
     Route::put('/dashboard/organisasi/update/{id}', [KemahasiswaanController::class, 'update'])->name('kemahasiswaan.update');
 });
 Route::middleware(Checkrole::class . ':mahasiswa')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'indexMahasiswa'])->name('dashboard.mahasiswa');
-    Route::get('/dashboard/redeem', [OrgtokenController::class, 'showredeem'])->name('show.redeem');
-    Route::post('/dashboard/redeem/save', [OrgtokenController::class, 'storeRedeem'])->name('save.redeem');
-    Route::get('/dashboard/organisasi', [DashboardController::class, 'indexOrganisasi'])->name('dashboard.organisasi');
+    Route::get('/dashboard/{nim}', [DashboardController::class, 'indexMahasiswa'])->name('dashboard.mahasiswa');
+    Route::get('/dashboard/{nim}/redeem', [OrgtokenController::class, 'showredeem'])->name('show.redeem');
+    Route::post('/dashboard/{nim}/redeem/save', [OrgtokenController::class, 'storeRedeem'])->name('save.redeem');
+    Route::get('/dashboard/{nim}/organisasi', [OrganizationController::class, 'index'])->name('dashboard.organisasi');
+    Route::get('/dashboard/{nim}/organisasi/event',[OrganizationController::class,'event']);
 });
 Route::get('/login', [AuthController::class, 'index'])->name('view.login');
 Route::get('/register', [AuthController::class, 'registration'])->name('view.register');

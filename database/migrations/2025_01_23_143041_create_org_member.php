@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('org_id');
             $table->unsignedBigInteger('role_id');
+            $table->enum('status', ['aktif', 'cuti', 'diberhentikan']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('org_id')->references('id')->on('organization')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('org_roles')->onDelete('cascade');

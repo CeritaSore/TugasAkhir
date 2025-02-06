@@ -9,7 +9,7 @@ class Organization extends Model
     //
     protected $table = "organization";
     protected $fillable = ["nama", "deskripsi", "tanggal_berdiri"];
-    
+
     public static function updateOrganization($id, $data)
     {
         $organization = Organization::find($id);
@@ -26,5 +26,9 @@ class Organization extends Model
     public function orgcoreteam()
     {
         return $this->hasMany(Orgcoreteam::class);
+    }
+    public static function countCoreTeam()
+    {
+        return Orgcoreteam::count();
     }
 }

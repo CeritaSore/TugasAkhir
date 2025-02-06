@@ -43,13 +43,5 @@ class DatabaseSeeder extends Seeder
                 'role' => $item
             ]);
         }
-        $getmhs = User::where('role', 'mahasiswa')->get();
-        foreach ($getmhs as $mhs) {
-            Orgcoreteam::create([
-                'org_id' => rand(Organization::min('id'), Organization::max('id')),
-                'user_id' => $mhs->id,
-                'role_id' => rand(Orgrole::min('id'), Orgrole::max('id')),
-            ]);
-        }
     }
 }

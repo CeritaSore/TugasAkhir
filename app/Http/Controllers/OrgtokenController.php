@@ -47,13 +47,11 @@ class OrgtokenController extends Controller
 
         return view('mahasiswa.redeem');
     }
-    public function storeRedeem(Request $request)
+    public function storeRedeem(Request $request, $nim)
     {
         $request->validate([
             'redeemtoken' => 'required',
         ]);
-
-
         $getdata = Orgtoken::where('created_for', Auth::user()->id)
             ->where('status', 0)
             ->get();
@@ -62,9 +60,16 @@ class OrgtokenController extends Controller
             if ($dekrip == $request->redeemtoken) {
                 $data->status = 1;
                 $data->save();
-                return redirect()->route('dashboard.mahasiswa')->with('success', 'token berhasil digunakan');
+                Orgcoreteam::create([
+                    'user_id' => $data->created_for,
+                    'org_id' => $data->organization_id,
+                    'role_id' => $data->roles_id,
+                    'status' => 'aktif',
+                ]);
+                return redirect()->route('dashboard.mahasiswa', $nim)->with('success', 'token berhasil digunakan');
             }
-            return response()->json('token tidak cocok');
+
+            return redirect()->back()->with('error', 'token tidak cocok');
         }
     }
 }

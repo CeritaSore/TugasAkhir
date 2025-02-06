@@ -1,5 +1,5 @@
 <x-headerassets title="Token Page"></x-headerassets>
-<form action="{{ route('save.redeem') }}" method="post">
+<form action="{{ route('save.redeem', Auth::user()->nim) }}" method="post">
     @csrf
     <label for="token">token</label>
     <input type="text" name="redeemtoken" id="token">

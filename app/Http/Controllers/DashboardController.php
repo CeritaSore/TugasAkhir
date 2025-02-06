@@ -12,21 +12,29 @@ class DashboardController extends Controller
 {
     public function indexKema()
     {
-        if (Auth::user()->role === 'kemahasiswaan') {
-            $user = Auth::user();
-            $org = Organization::all();
-            $token = Orgtoken::with(['creator', 'receiver'])->get();
+        if (Auth::check()) {
 
-
-            return view('kemahasiswaan.dashboard', compact('org', 'user', 'token'));
+            if (Auth::user()->role === 'kemahasiswaan') {
+                $user = Auth::user();
+                $org = Organization::all();
+                $token = Orgtoken::with(['creator', 'receiver'])->get();
+                return view('kemahasiswaan.dashboard', compact('org', 'user', 'token'));
+            }
         }
+        return redirect()->route('index');
     }
-    public function indexMahasiswa()
+    public function indexMahasiswa($nim)
     {
-        $user = Auth::user();
-        $notify = Orgtoken::notify($user->id);
-        $hasAccess = Orgtoken::grantingAccess();
-        return view('mahasiswa.dashboard', compact('notify','hasAccess'));
+        if (Auth::check()) {
+
+            $user = Auth::user();
+            $notify = Orgtoken::notify($user->id);
+            $hasAccess = Orgtoken::grantingAccess();
+            $nim = $user->nim;
+            // return response()->json($nim);
+            return view('mahasiswa.dashboard', compact('notify', 'hasAccess','nim'));
+        }
+        return redirect()->route('index');
     }
 
     public function index()
