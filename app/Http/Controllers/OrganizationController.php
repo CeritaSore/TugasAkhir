@@ -14,7 +14,8 @@ class OrganizationController extends Controller
             'status' => 'success',
             'organisasi' => $organisasi,
         ];
-        return response()->json($data);
+        // return response()->json($data);
+        return view('kemahasiswaan.organisasi', compact('organisasi'));
     }
     public function storeOrganization(Request $request)
     {

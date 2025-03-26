@@ -11,7 +11,8 @@ class OrganisasiTokenController extends Controller
     public function index()
     {
         $getToken = OrganisasiToken::all();
-        return response()->json($getToken, 200);
+        return view('kemahasiswaan.token', compact('getToken'));
+        // return response()->json($getToken, 200);
     }
     public function storeToken(Request $request)
     {
@@ -41,7 +42,7 @@ class OrganisasiTokenController extends Controller
     {
         $token = OrganisasiToken::encodeToken($request->token);
         $dbtoken = OrganisasiToken::where('token', $token)->first();
-        if ($dbtoken->token === $token){
+        if ($dbtoken->token === $token) {
             $dbtoken->status = 1;
             $dbtoken->save();
             return response()->json($dbtoken, 200);
