@@ -65,3 +65,6 @@ Route::delete('/dashboard/organisasi/event/{slug}/pendaftaran/{id}/delete', [For
 #organisasi acara dan kegiatan(jawaban pendaftaran)
 Route::get('/dashboard/organisasi/event/{slug}/pendaftaran/jawaban', [AnswerController::class, 'index']);
 Route::post('/dashboard/organisasi/event/{slug}/pendaftaran/jawaban/save', [AnswerController::class, 'storeAnswer']);
+
+#organisasi anggaran
+Route::get('/dashboard/organisasi/anggaran', [OrganizationController::class, 'showAnggaran']);

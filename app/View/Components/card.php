@@ -11,17 +11,15 @@ class card extends Component
     /**
      * Create a new component instance.
      */
-    public $cardtitle;
-    public $cardbody;
-    public $icon;
-    public function __construct($cardtitle, $cardbody,$icon)
+    public $cardTitle;
+    public $cardSubtitle;
+    public $cardIcon;
+    public function __construct($cardTitle, $cardSubtitle, $cardIcon)
     {
-        //
-        $this->cardtitle = $cardtitle;
-        $this->cardbody = $cardbody;
-        $this->icon = $icon;
+        $this->cardTitle = $cardTitle;
+        $this->cardSubtitle = $cardSubtitle;
+        $this->cardIcon = $cardIcon;
     }
-
     /**
      * Get the view / contents that represent the component.
      */

@@ -12,11 +12,10 @@ class sidebar extends Component
      * Create a new component instance.
      */
     public $menu;
-    // public $url;
     public function __construct($menu = [])
     {
-        $this->menu = $menu;
         //
+        $this->menu = $menu;
     }
 
     /**

@@ -68,7 +68,8 @@ class OrganizationController extends Controller
             'status' => 'success',
             'organisasi' => $organisasi,
         ];
-        return response()->json($data);
+        // return response()->json($data);
+        return view('organisasi.index', compact('organisasi'));
     }
     public function editOrganisasi(Request $request, $nama)
     {

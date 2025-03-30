@@ -71,6 +71,13 @@ return new class extends Migration
             $table->foreign('pelaksana')->references('id')->on('organisasi_pengurus')->onDelete('cascade');
             $table->timestamps();
         });
+        Schema::create('organisasi_anggaran',function(Blueprint $table){
+            $table->id();
+            $table->unsignedBigInteger('organisasi_id');
+            $table->decimal('anggaran');
+            $table->timestamps();
+            $table->foreign('organisasi_id')->references('id')->on('organisasi')->onDelete('cascade');
+        });
         Schema::create('event_type', function (Blueprint $table) {
             $table->id();
             $table->string('tipe');
