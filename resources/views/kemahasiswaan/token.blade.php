@@ -11,7 +11,7 @@
     ]"></x-sidebar>
 @endsection
 @section('content')
-    <x-table :tableHeaders="['No', 'Token', 'Untuk', 'status', 'Tanggal Kadaluarsa', 'Action']" tableTitle="Daftar Token">
+    <x-table :tableHeaders="['No', 'Token', 'Untuk', 'status', 'Tanggal Kadaluarsa', 'Action']" tableTitle="Daftar Token" modalId="tambah">
         @foreach ($getToken as $key => $item)
             <tr>
                 <td> {{ $key }} </td>
@@ -38,7 +38,7 @@
             </tr>
         @endforeach
     </x-table>
-    <x-modal>
+    <x-modal modalId="tambah" modalTitle="Tambah Organisasi">
         <form action="{{ route('save.token') }}" method="post">
             @csrf
             <div class="mb-3">
