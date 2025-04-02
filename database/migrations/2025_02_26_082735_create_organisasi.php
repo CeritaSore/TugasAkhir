@@ -33,7 +33,7 @@ return new class extends Migration
             $table->unsignedBigInteger('creator');
             $table->unsignedBigInteger('organisasi_id');
             $table->unsignedBigInteger('role_id');
-            $table->boolean('status');
+            $table->boolean('status')->default(false);
             $table->date('expired');
             $table->foreign('organisasi_id')->references('id')->on('organisasi')->onDelete('cascade');
             $table->foreign('receiver')->references('id')->on('users')->onDelete('cascade');

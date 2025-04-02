@@ -12,8 +12,8 @@
 @endsection
 @section('content')
     <div class="row">
-        <x-card cardTitle="Total Token" cardSubtitle="100" cardIcon="wallet"></x-card>
-        <x-card cardTitle="Jumlah Organisasi" cardSubtitle="50" cardIcon="wallet"></x-card>
-        <x-card cardTitle="Jumlah Mahasiswa" cardSubtitle="50" cardIcon="wallet"></x-card>
+        <x-card cardTitle="Total Token" cardSubtitle="{{ $allToken }}" cardIcon="wallet"></x-card>
+        <x-card cardTitle="Jumlah Organisasi" cardSubtitle="{{ $allOrg }}" cardIcon="wallet"></x-card>
+        <x-card cardTitle="Jumlah Mahasiswa" cardSubtitle="{{ $allmhs }}" cardIcon="wallet"></x-card>
     </div>
 @endsection

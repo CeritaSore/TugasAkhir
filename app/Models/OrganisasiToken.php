@@ -14,14 +14,14 @@ class OrganisasiToken extends Model
         'creator',
         'organisasi_id',
         'role_id',
-        'status',
+        // 'status',
         'expired'
     ];
-    public function creatorFor()
+    public function createFor()
     {
         return $this->belongsTo(User::class, 'creator');
     }
-    public function receiverBy()
+    public function receiveBy()
     {
         return $this->belongsTo(User::class, 'receiver');
     }

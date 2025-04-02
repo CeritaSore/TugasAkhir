@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Organization;
+use Illuminate\Http\Request;
 use App\Models\OrganisasiToken;
 use App\Models\OrganizationRole;
-use Illuminate\Http\Request;
 
 class OrganisasiTokenController extends Controller
 {
     public function index()
     {
         $getToken = OrganisasiToken::all();
-        return view('kemahasiswaan.token', compact('getToken'));
+        $showorg = Organization::all();
+        $showRole = OrganizationRole::all();
+        $getmhs= User::where('role', 'mahasiswa')->get();
+        return view('kemahasiswaan.token', compact('getToken', 'showorg', 'showRole', 'getmhs'));
         // return response()->json($getToken, 200);
     }
     public function storeToken(Request $request)
@@ -22,7 +27,7 @@ class OrganisasiTokenController extends Controller
             'creator' => 'required',
             'organisasi_id' => 'required',
             'role_id' => 'required',
-            'status' => 'required',
+            // 'status' => 'required',
             'expired' => 'required'
         ]);
         // $getLead = OrganizationRole::where('id', $validation['role_id'])->first();
@@ -33,7 +38,7 @@ class OrganisasiTokenController extends Controller
             'creator' => $validation['creator'],
             'organisasi_id' => $validation['organisasi_id'],
             'role_id' => $validation['role_id'],
-            'status' => $validation['status'],
+            // 'status' => $validation['status'],
             'expired' => $validation['expired']
         ]);
         return response()->json($data, 200);
