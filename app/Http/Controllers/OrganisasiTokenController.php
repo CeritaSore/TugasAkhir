@@ -15,7 +15,7 @@ class OrganisasiTokenController extends Controller
         $getToken = OrganisasiToken::all();
         $showorg = Organization::all();
         $showRole = OrganizationRole::all();
-        $getmhs= User::where('role', 'mahasiswa')->get();
+        $getmhs = User::where('role', 'mahasiswa')->get();
         return view('kemahasiswaan.token', compact('getToken', 'showorg', 'showRole', 'getmhs'));
         // return response()->json($getToken, 200);
     }
@@ -41,7 +41,8 @@ class OrganisasiTokenController extends Controller
             // 'status' => $validation['status'],
             'expired' => $validation['expired']
         ]);
-        return response()->json($data, 200);
+        return redirect()->route('kemahasiswaan.token');
+        // return response()->json($data, 200);
     }
     public function redeemToken(Request $request)
     {
