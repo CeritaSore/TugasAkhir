@@ -5,7 +5,7 @@
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
-            <i class="bx bx-chevron-left d-block d-xl-none align-middle"></i>
+            <i class="icon-base bx bx-chevron-left"></i>
         </a>
     </div>
 
@@ -16,7 +16,7 @@
     <ul class="menu-inner py-1">
         @foreach ($menu as $item)
             <li class="menu-item @if (Route::currentRouteName() === $item['routename']) active @endif">
-                <a href="{{ route($item['routename']) }}" class="menu-link">
+                <a href="{{ route($item['routename'], $item['parameter'] ?? []) }}" class="menu-link">
                     <div class="text-truncate" data-i18n="Basic">{{ $item['name'] }}</div>
                 </a>
             </li>
