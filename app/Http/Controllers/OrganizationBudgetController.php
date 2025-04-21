@@ -11,13 +11,21 @@ class OrganizationBudgetController extends Controller
     public function index()
     {
         // return response()->json('selamat datang', 200);
-        $budgets = OrganizationBudget::all();
-        return view('organisasi.anggaran', compact('budgets'));
+        $budgets = OrganizationBudget::where('is_deleted', 0)->whereIn('status', ['tertunda', 'ditolak'])->get();
+        $budgetsApprove = OrganizationBudget::where('is_deleted', 0)->where('status', 'disetujui')->get();
+        return view('organisasi.anggaran', compact('budgets','budgetsApprove'));
     }
     public function showBudgets($id)
     {
         $budgets = OrganizationBudget::find($id);
         return view('organisasi.editanggaran', compact('budgets'));
+    }
+    public function updateApproval(Request $request, $id)
+    {
+        $approval = OrganizationBudget::find($id);
+        $request->approval === "setuju" ? $approval->status = "disetujui" : $approval->status = "ditolak";
+        $approval->save();
+        return redirect()->route('organisasi.anggaran')->with('success', 'Anggaran berhasil disetujui');
     }
     public function showBudgetsDetail($anggaran)
     {
@@ -90,7 +98,9 @@ class OrganizationBudgetController extends Controller
     }
     public function deleteBudgets($id)
     {
-        $delete = OrganizationBudget::find($id)->delete();
+        $delete = OrganizationBudget::find($id);
+        $delete->is_deleted = 1;
+        $delete->save();
         return redirect()->route('organisasi.anggaran')->with('success', 'Anggaran berhasil ditambahkan');
         // return response()->json([
         //     'message' => 'success delete',

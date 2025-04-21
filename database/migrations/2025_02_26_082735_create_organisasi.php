@@ -61,7 +61,7 @@ return new class extends Migration
         Schema::create('organisasi_program', function (Blueprint $table) {
             $table->id();
             $table->string('nama_program');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
             $table->string('tempat');
@@ -76,6 +76,8 @@ return new class extends Migration
             $table->string('nama_anggaran');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('divisi_id');
+            $table->enum('status', ['tertunda', 'ditolak', 'disetujui'])->default('tertunda');
+            $table->boolean('is_deleted')->default(false);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('divisi_id')->references('id')->on('organisasi_divisi')->onDelete('cascade');
             $table->timestamps();
@@ -87,6 +89,7 @@ return new class extends Migration
             $table->string('satuan_barang');
             $table->decimal('harga_satuan');
             $table->decimal('total_harga');
+            $table->decimal('realisasi');
             $table->unsignedBigInteger('anggaran_id');
             $table->foreign('anggaran_id')->references('id')->on('organisasi_anggaran')->onDelete('cascade');
             $table->timestamps();

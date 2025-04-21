@@ -21,7 +21,7 @@
             <x-navtab>
 
             @section('rab')
-                <x-table tableTitle="Daftar Rancangan" :tableHeaders="['NO', 'nama', 'pengaju', 'divisi', 'action']" modalId="tambahdata">
+                <x-table tableTitle="Daftar Rancangan" :tableHeaders="['NO', 'nama', 'pengaju', 'divisi', 'status', 'action']" modalId="tambahdata">
                     @foreach ($budgets as $item)
                         <tr>
                             <td>{{ $no = 1 }}</td>
@@ -29,9 +29,18 @@
                             <td>{{ $item->user->name }}</td>
                             <td>{{ $item->divisi->divisi }}</td>
                             <td>
+                                @if ($item->status == 'tertunda')
+                                    <span class="badge bg-label-warning">{{ $item->status }}</span>
+                                @elseif($item->status == 'disetujui')
+                                    <span class="badge bg-label-success">{{ $item->status }}</span>
+                                @else
+                                    <span class="badge bg-label-danger">{{ $item->status }}</span>
+                                @endif
+                            </td>
+                            <td>
                                 <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="icon-base bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu" style="">
@@ -52,12 +61,49 @@
                 </x-table>
             @endsection
             @section('lak')
-                halo
+                <x-table tableTitle="Daftar Laporan" :tableHeaders="['NO', 'nama', 'pengaju', 'divisi', 'status', 'action']">
+                    @foreach ($budgetsApprove as $item)
+                        <tr>
+                            <td>{{ $no = 1 }}</td>
+                            <td>{{ $item->nama_anggaran }}</td>
+                            <td>{{ $item->user->name }}</td>
+                            <td>{{ $item->divisi->divisi }}</td>
+                            <td>
+                                @if ($item->status == 'tertunda')
+                                    <span class="badge bg-label-warning">{{ $item->status }}</span>
+                                @elseif($item->status == 'disetujui')
+                                    <span class="badge bg-label-success">{{ $item->status }}</span>
+                                @else
+                                    <span class="badge bg-label-danger">{{ $item->status }}</span>
+                                @endif
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="icon-base bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu" style="">
+                                        <a class="dropdown-item"
+                                            href="{{ route('show.anggaran.detail', str_replace(' ', '-', $item->nama_anggaran)) }}"><i
+                                                class="icon-base bx bx-edit-alt me-1"></i>buat list kebutuhan</a>
+                                        <a class="dropdown-item" href="{{ route('show.anggaran', $item->id) }}"><i
+                                                class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#deletedata{{ $item->id }}"><i
+                                                class="icon-base bx bx-trash me-1"></i>
+                                            Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                    @endforeach
+                </x-table>
             @endsection
 
         </x-navtab>
     </div>
     <x-modal modalTitle="Tambah data" modalId="tambahdata">
+
         <form action="{{ route('save.anggaran') }}" method="post">
             @csrf
             <div class="mb-3">

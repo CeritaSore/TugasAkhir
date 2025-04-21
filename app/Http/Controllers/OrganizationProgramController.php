@@ -15,7 +15,8 @@ class OrganizationProgramController extends Controller
             'message' => 'Data program berhasil diambil',
             'data' => $program
         ];
-        return response()->json($data, 200);
+        return view('organisasi.program',compact('program'));
+        // return response()->json($data, 200);
     }
     public function storeProgram(Request $request)
     {

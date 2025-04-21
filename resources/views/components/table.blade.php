@@ -1,8 +1,11 @@
 <div class="card">
-    <div class="d-flex w-full   justify-content-center align-items-center">
+    <div class="d-flex w-full justify-content-center align-items-center">
         <h5 class="card-header">{{ $tableTitle }}
         </h5>
-        <button class="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#{{$modalId}}">New</button>
+        @if ($modalId)
+            <button class="btn btn-primary mx-auto" data-bs-toggle="modal"
+                data-bs-target="#{{ $modalId }}">New</button>
+        @endif
     </div>
 
     <div class="table-responsive text-nowrap">
