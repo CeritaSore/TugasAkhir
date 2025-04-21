@@ -17,10 +17,20 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    public function creator()
+    {
+        return  $this->hasMany(OrganisasiToken::class, 'creator');
+    }
+    public function receiver()
+    {
+        return  $this->hasMany(OrganisasiToken::class, 'receiver');
+    }
     protected $fillable = [
         'name',
         'email',
         'password',
+        'nim',
+        'role',
     ];
 
     /**

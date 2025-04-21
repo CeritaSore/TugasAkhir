@@ -14,9 +14,17 @@ class OrganisasiToken extends Model
         'creator',
         'organisasi_id',
         'role_id',
-        'status',
+        // 'status',
         'expired'
     ];
+    public function createFor()
+    {
+        return $this->belongsTo(User::class, 'creator');
+    }
+    public function receiveBy()
+    {
+        return $this->belongsTo(User::class, 'receiver');
+    }
     public static function encodeToken($data)
     {
         return base64_encode(json_encode($data));

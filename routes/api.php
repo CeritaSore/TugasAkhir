@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\OrganisasiTokenController;
+use App\Http\Controllers\OrganizationBudgetController;
 use App\Http\Controllers\OrganizationRoleController;
 use App\Http\Controllers\OrganizationProgramController;
 use App\Http\Controllers\OrganizationCoreTeamController;
 use App\Http\Controllers\OrganizationDivisionController;
-
+use App\Models\OrganizationBudget;
 
 Route::get('/token', [OrganisasiTokenController::class, 'index']);
 #show all organization and store
@@ -65,3 +66,11 @@ Route::delete('/dashboard/organisasi/event/{slug}/pendaftaran/{id}/delete', [For
 #organisasi acara dan kegiatan(jawaban pendaftaran)
 Route::get('/dashboard/organisasi/event/{slug}/pendaftaran/jawaban', [AnswerController::class, 'index']);
 Route::post('/dashboard/organisasi/event/{slug}/pendaftaran/jawaban/save', [AnswerController::class, 'storeAnswer']);
+
+#organisasi anggaran
+Route::get('/dashboard/organisasi/anggaran', [OrganizationBudgetController::class, 'index']);
+Route::get('/dashboard/organisasi/anggaran/create-detail/{anggaran}',[OrganizationBudgetController::class,'showBudgetsDetail']);
+Route::post('/dashboard/organisasi/anggaran/create-detail/{anggaran}/save', [OrganizationBudgetController::class, 'storeBudgetsDetail'])->name('save.anggaran.detail');
+Route::post('/dashboard/organisasi/anggaran/save', [OrganizationBudgetController::class, 'storeBudgets']);
+Route::put('/dashboard/organisasi/anggaran/{id}/update', [OrganizationBudgetController::class, 'updateBudgets']);
+Route::delete('/dashboard/organisasi/anggaran/{id}/delete', [OrganizationBudgetController::class, 'deleteBudgets']);

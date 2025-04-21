@@ -33,7 +33,7 @@ return new class extends Migration
             $table->unsignedBigInteger('creator');
             $table->unsignedBigInteger('organisasi_id');
             $table->unsignedBigInteger('role_id');
-            $table->boolean('status');
+            $table->boolean('status')->default(false);
             $table->date('expired');
             $table->foreign('organisasi_id')->references('id')->on('organisasi')->onDelete('cascade');
             $table->foreign('receiver')->references('id')->on('users')->onDelete('cascade');
@@ -71,6 +71,27 @@ return new class extends Migration
             $table->foreign('pelaksana')->references('id')->on('organisasi_pengurus')->onDelete('cascade');
             $table->timestamps();
         });
+        Schema::create('organisasi_anggaran', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_anggaran');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('divisi_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('divisi_id')->references('id')->on('organisasi_divisi')->onDelete('cascade');
+            $table->timestamps();
+        });
+        Schema::create('organisasi_anggaran_items', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_items');
+            $table->integer('jumlah');
+            $table->string('satuan_barang');
+            $table->decimal('harga_satuan');
+            $table->decimal('total_harga');
+            $table->unsignedBigInteger('anggaran_id');
+            $table->foreign('anggaran_id')->references('id')->on('organisasi_anggaran')->onDelete('cascade');
+            $table->timestamps();
+        });
+
         Schema::create('event_type', function (Blueprint $table) {
             $table->id();
             $table->string('tipe');
