@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Models\OrganizationRole;
 use App\Models\OrganizationBudget;
 use Illuminate\Support\Facades\Route;
@@ -40,12 +41,15 @@ Route::post('/dashboard/organisasi/initial-role-data/save', [OrganizationControl
 
 Route::get('/dashboard/organisasi/pengurus', [OrganizationController::class, 'showPengurus'])->name('organisasi.pengurus');
 
-Route::get('/dashboard/organisasi/kegiatan', [OrganizationController::class, 'showKegiatan'])->name('organisasi.kegiatan');
+Route::get('/dashboard/organisasi/kegiatan', [EventController::class, 'index'])->name('organisasi.kegiatan');
 #organisasi program kerja
 Route::get('/dashboard/organisasi/program', [OrganizationProgramController::class, 'index'])->name('organisasi.program');
-Route::post('/dashboard/organisasi/program/save', [OrganizationProgramController::class, 'storeProgram']);
-Route::put('/dashboard/organisasi/program/{id}/update', [OrganizationProgramController::class, 'updateProgram']);
-Route::delete('/dashboard/organisasi/program/{id}/delete', [OrganizationProgramController::class, 'deleteProgram']);
+Route::get('/dashboard/organisasi/program/editprogram/{namaprogram}', [OrganizationProgramController::class, 'showProgram'])->name('show.program.edit');
+Route::get('/dashboard/organisasi/program/editstatus/{namaprogram}', [OrganizationProgramController::class, 'showProgramStatus'])->name('show.program.status');
+Route::post('/dashboard/organisasi/program/save', [OrganizationProgramController::class, 'storeProgramAndBudgets'])->name('program.save');
+Route::put('/dashboard/organisasi/program/{namaprogram}/update', [OrganizationProgramController::class, 'updateProgram'])->name('update.program');
+Route::put('/dashboard/organisasi/program/status/{namaprogram}/update', [OrganizationProgramController::class, 'updateStatus'])->name('update.status');
+Route::delete('/dashboard/organisasi/program/{namaprogram}/delete', [OrganizationProgramController::class, 'deleteProgram'])->name('program.delete');
 
 
 #organisasi anggaran
@@ -57,3 +61,11 @@ Route::post('/dashboard/organisasi/anggaran/save', [OrganizationBudgetController
 Route::put('/dashboard/organisasi/anggaran/{id}/approval', [OrganizationBudgetController::class, 'updateApproval'])->name('update.anggaran.approval');
 Route::put('/dashboard/organisasi/anggaran/{id}/update', [OrganizationBudgetController::class, 'updateBudgets'])->name('update.anggaran');
 Route::delete('/dashboard/organisasi/anggaran/{id}/delete', [OrganizationBudgetController::class, 'deleteBudgets'])->name('delete.anggaran');
+
+
+# organisasi acara dan kegiatan
+Route::get('/dashboard/organisasi/event', [EventController::class, 'index'])->name('organisasi.acara');
+Route::get('/dashboard/organisasi/event/{slug}', [EventController::class, 'showEvent'])->name('show.event');
+Route::post('/dashboard/organisasi/event/save', [EventController::class, 'storeEvent'])->name('store.event');
+Route::put('/dashboard/organisasi/event/{slug}/update', [EventController::class, 'updateEvent'])->name('update.event');
+Route::delete('/dashboard/organisasi/event/{slug}/delete', [EventController::class, 'deleteEvent'])->name('delete.event');

@@ -15,7 +15,8 @@ class Event extends Model
         'tanggal_mulai',
         'tanggal_selesai',
         'slug',
-        'organisasi_id'
+        'proker_id',
+        'is_deleted'
     ];
     public static function slugTitle($slug)
     {
@@ -25,7 +26,12 @@ class Event extends Model
     {
         return $this->belongsTo(EventType::class, 'type_id');
     }
-    public function form() {
+    public function form()
+    {
         return $this->hasMany(FormQuestion::class);
+    }
+    public function prokers()
+    {
+        return $this->belongsTo(OrganizationProgram::class, 'proker_id');
     }
 }

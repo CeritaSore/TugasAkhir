@@ -25,6 +25,7 @@
         <div class="col-xxl-6 col-lg-4  col-md-6 mb-5">
             <x-card cardIcon="money" cardTitle="Anggaran" cardSubtitle="{{ $anggaran }}"></x-card>
         </div>
+        
 
     </div>
 @endsection

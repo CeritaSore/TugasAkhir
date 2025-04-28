@@ -11,9 +11,14 @@ class OrganizationBudgetController extends Controller
     public function index()
     {
         // return response()->json('selamat datang', 200);
-        $budgets = OrganizationBudget::where('is_deleted', 0)->whereIn('status', ['tertunda', 'ditolak'])->get();
-        $budgetsApprove = OrganizationBudget::where('is_deleted', 0)->where('status', 'disetujui')->get();
-        return view('organisasi.anggaran', compact('budgets','budgetsApprove'));
+
+        $budgets = OrganizationBudget::whereHas('proker', function ($query) {
+            $query->where('is_deleted', false);
+        })->sum('jumlah_anggaran');
+        // $budgetsApprove = OrganizationBudget::where('is_deleted', 0)->where('status', 'disetujui')->get();
+        // return view('organisasi.anggaran', compact('budgets','budgetsApprove'));
+        return view('organisasi.anggaran', compact('budgets'));
+        // return response()->json($budgets);
     }
     public function showBudgets($id)
     {

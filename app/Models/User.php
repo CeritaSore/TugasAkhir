@@ -55,4 +55,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function program()
+    {
+        return $this->hasManyThrough(OrganizationProgram::class, OrganizationCoreTeam::class, 'user_id', 'pelaksana');
+    }
 }

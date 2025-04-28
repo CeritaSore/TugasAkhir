@@ -75,6 +75,6 @@ class DatabaseSeeder extends Seeder
                 'divisi' => $div,
             ]);
         }
-        $this->call(AnggaranSeeder::class);
+        // $this->call(Anggara nSeeder::class);
     }
 }

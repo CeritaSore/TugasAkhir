@@ -47,7 +47,7 @@ Route::delete('/dashboard/organisasi/divisi/{id}/delete', [OrganizationDivisionC
 
 #organisasi program
 Route::get('/dashboard/organisasi/program', [OrganizationProgramController::class, 'index']);
-Route::post('/dashboard/organisasi/program/save', [OrganizationProgramController::class, 'storeProgram']);
+Route::post('/dashboard/organisasi/program/save', [OrganizationProgramController::class, 'storeProgramAndBudgets']);
 Route::put('/dashboard/organisasi/program/{id}/update', [OrganizationProgramController::class, 'updateProgram']);
 Route::delete('/dashboard/organisasi/program/{id}/delete', [OrganizationProgramController::class, 'deleteProgram']);
 
