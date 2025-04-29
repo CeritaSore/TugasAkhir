@@ -45,7 +45,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="/assets/js/config.js"></script>
 </head>
 
@@ -71,7 +71,7 @@
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <div class="row">
-                            <div class="col-xxl-8 mb-6 order-0">
+                            <div class="col-xxl-12 col-xl-12 col-lg-12 mb-6 order-0">
                                 @yield('content')
                             </div>
                         </div>

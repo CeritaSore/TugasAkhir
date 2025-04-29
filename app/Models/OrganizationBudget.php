@@ -8,20 +8,11 @@ class OrganizationBudget extends Model
 {
     protected $table = 'organisasi_anggaran';
     protected $fillable = [
-        'nama_anggaran',
-        'user_id',
-        'divisi_id'
+        'jumlah_anggaran',
+        'program_id',
     ];
-    public function user()
+    public function proker()
     {
-        return $this->belongsTo(User::class, 'user_id');
-    }
-    public function divisi()
-    {
-        return $this->belongsTo(OrganizationDivision::class, 'divisi_id');
-    }
-    public function budgetsDetail()
-    {
-        return $this->hasMany(OrganizationBudgetsDetail::class, 'anggaran_id');
+        return $this->belongsTo(OrganizationProgram::class, 'program_id');
     }
 }

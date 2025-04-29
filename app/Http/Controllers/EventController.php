@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventType;
+use App\Models\OrganizationProgram;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $event = Event::all();
-        return response()->json($event);
+        $event = Event::where('is_deleted', false)->get();
+        $eventTypes = EventType::all();
+        $proker = OrganizationProgram::all();
+        // return response()->json($event);
+        return view('organisasi.kegiatan', compact('event', 'eventTypes', 'proker'));
     }
     public function storeEvent(Request $request)
     {
@@ -20,7 +25,7 @@ class EventController extends Controller
             'type_id' => 'required',
             'tanggal_mulai' => 'required',
             'tanggal_selesai' => 'required',
-            'organisasi_id' => 'required'
+            'proker' => 'required'
         ]);
         $slug = Event::slugTitle($request->nama);
         $createEvent = Event::create([
@@ -29,14 +34,22 @@ class EventController extends Controller
             'type_id' => $validation['type_id'],
             'tanggal_mulai' => $validation['tanggal_mulai'],
             'tanggal_selesai' => $validation['tanggal_selesai'],
-            'organisasi_id' => $validation['organisasi_id'],
+            'proker_id' => $validation['proker'],
             'slug' => $slug
         ]);
         $data = [
-            "message" => "success",
+            "message" => "Acara berhasil tersimpan",
             "data" => $createEvent
         ];
-        return response()->json($data);
+        // return response()->json($data);
+        return redirect()->route('organisasi.acara')->with('success', $data['message']);
+    }
+    public function showEvent($slug)
+    {
+        $event = Event::where('slug', $slug)->first();
+        $eventTypes = EventType::all();
+        $proker = OrganizationProgram::all();
+        return view('organisasi.eventedit', compact('event', 'eventTypes', 'proker'));
     }
     public function updateEvent(Request $request, $slug)
     {
@@ -46,7 +59,7 @@ class EventController extends Controller
             'type_id' => 'required',
             'tanggal_mulai' => 'required',
             'tanggal_selesai' => 'required',
-            'organisasi_id' => 'required'
+            'proker' => 'required'
         ]);
         $getEvent = Event::where('slug', $slug)->first();
         $getEvent->nama = $validation['nama'];
@@ -54,21 +67,25 @@ class EventController extends Controller
         $getEvent->type_id = $validation['type_id'];
         $getEvent->tanggal_mulai = $validation['tanggal_mulai'];
         $getEvent->tanggal_selesai = $validation['tanggal_selesai'];
-        $getEvent->organisasi_id = $validation['organisasi_id'];
+        $getEvent->proker_id = $validation['proker'];
         $getEvent->slug = Event::slugTitle($validation['nama']);
         $getEvent->save();
         $data = [
-            "message" => "success",
+            "message" => "data berhasil di perbarui",
             "data" => $getEvent
         ];
-        return response()->json($data);
+        // return response()->json($data);
+        return redirect()->route('organisasi.acara')->with('succcess', $data['message']);
     }
     public function deleteEvent($slug)
     {
+        $event = Event::where('slug', $slug)->first();
+        $event->is_deleted = true;
+        $event->save();
         $data = [
-            "message" => "data dihapus",
-            "data" => Event::where('slug', $slug)->delete()
+            "message" => "event dihapus",
         ];
-        return response()->json($data);
+        // return response()->json($data);
+        return redirect()->route('organisasi.acara')->with('success', $data['message']);
     }
 }

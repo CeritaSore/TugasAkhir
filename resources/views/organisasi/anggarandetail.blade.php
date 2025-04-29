@@ -14,7 +14,6 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 mt-5">
-
             <x-table tableTitle="Daftar Rancangan" :tableHeaders="['NO', 'nama items', 'jumlah', 'harga satuan', 'satuan barang', 'total', 'action']" modalId="tambahdata">
                 @foreach ($items as $item)
                     <tr>
@@ -58,6 +57,17 @@
                 <tr>
                     <td colspan="5">Total pengajuan = </td>
                     <td>Rp {{ number_format($sumBudgets, 0, ',', '.') }}</td>
+                </tr>
+                <tr>
+                    <td>anggaran disetujui?</td>
+                    <td>
+                        <form action="{{route('update.anggaran.approval', $budgets->id)}}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" value="setuju" name="approval" class="btn btn-success">Setujui</button>
+                            <button type="submit" value="tolak" name="approval" class="btn btn-danger">Tolak</button>
+                        </form>
+                    </td>
                 </tr>
             </x-table>
 

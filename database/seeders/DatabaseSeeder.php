@@ -9,6 +9,7 @@ use App\Models\Event;
 use App\Models\EventType;
 use App\Models\InputType;
 use App\Models\Organization;
+use App\Models\OrganizationDivision;
 use Illuminate\Database\Seeder;
 use App\Models\OrganizationRole;
 
@@ -20,7 +21,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
@@ -68,5 +68,13 @@ class DatabaseSeeder extends Seeder
                 'tipe' => $type,
             ]);
         }
+
+        $divisi = ['divisi 1', 'divisi 2', 'divisi 3', 'divisi 4'];
+        foreach ($divisi as $div) {
+            OrganizationDivision::create([
+                'divisi' => $div,
+            ]);
+        }
+        // $this->call(Anggara nSeeder::class);
     }
 }

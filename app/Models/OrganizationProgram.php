@@ -13,8 +13,15 @@ class OrganizationProgram extends Model
         'tanggal_mulai',
         'tanggal_selesai',
         'tempat',
-        'anggaran',
         'pelaksana',
         'status'
     ];
+    public function budgets()
+    {
+        return $this->hasOne(OrganizationBudget::class, 'program_id');
+    }
+    public function pics()
+    {
+        return $this->belongsTo(OrganizationCoreTeam::class, 'pelaksana');
+    }
 }
