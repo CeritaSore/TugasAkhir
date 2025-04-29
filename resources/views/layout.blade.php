@@ -45,7 +45,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/js/apexchart.js'])
     <script src="/assets/js/config.js"></script>
 </head>
 
@@ -107,15 +107,15 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="/assets/vendor/libs/apex-charts/apexcharts.js"></script>
-
+    {{-- <script src="/assets/vendor/libs/apex-charts/apexcharts.js"></script> --}}
+    {{-- <script src="/assets/js/apexcharts.js"></script> --}}
     <!-- Main JS -->
 
     <script src="/assets/js/main.js"></script>
 
     <!-- Page JS -->
     <script src="/assets/js/dashboards-analytics.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <!-- Place this tag before closing body tag for github widget button. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>

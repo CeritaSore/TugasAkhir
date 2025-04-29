@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventForm;
 use App\Models\EventType;
 use App\Models\OrganizationProgram;
 use Illuminate\Http\Request;
@@ -49,7 +50,9 @@ class EventController extends Controller
         $event = Event::where('slug', $slug)->first();
         $eventTypes = EventType::all();
         $proker = OrganizationProgram::all();
-        return view('organisasi.eventedit', compact('event', 'eventTypes', 'proker'));
+        $registform = EventForm::where('event_id', $event->id)->where('nama_form', 'Registration Form')->first();
+        $feedbackform = EventForm::where('event_id', $event->id)->where('nama_form', 'Feedback Form')->first();
+        return view('organisasi.eventdetail', compact('event', 'eventTypes', 'proker', 'registform', 'feedbackform'));
     }
     public function updateEvent(Request $request, $slug)
     {
@@ -75,7 +78,7 @@ class EventController extends Controller
             "data" => $getEvent
         ];
         // return response()->json($data);
-        return redirect()->route('organisasi.acara')->with('succcess', $data['message']);
+        return redirect()->route('show.event', $getEvent->slug)->with('succcess', $data['message']);
     }
     public function deleteEvent($slug)
     {

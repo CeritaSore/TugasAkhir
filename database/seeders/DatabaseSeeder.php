@@ -9,6 +9,7 @@ use App\Models\Event;
 use App\Models\EventType;
 use App\Models\InputType;
 use App\Models\Organization;
+use App\Models\OrganizationCoreTeam;
 use App\Models\OrganizationDivision;
 use Illuminate\Database\Seeder;
 use App\Models\OrganizationRole;
@@ -62,12 +63,8 @@ class DatabaseSeeder extends Seeder
                 'tipe' => $type,
             ]);
         }
-        $inputType = ['text', 'textarea', 'number', 'date', 'time', 'file'];
-        foreach ($inputType as $type) {
-            InputType::create([
-                'tipe' => $type,
-            ]);
-        }
+        // $inputType = ['text', 'textarea', 'number', 'date', 'time', 'file'];
+
 
         $divisi = ['divisi 1', 'divisi 2', 'divisi 3', 'divisi 4'];
         foreach ($divisi as $div) {
@@ -75,6 +72,12 @@ class DatabaseSeeder extends Seeder
                 'divisi' => $div,
             ]);
         }
+        OrganizationCoreTeam::create([
+            'user_id' => 1,
+            'organisasi_id' => 1,
+            'role_id' => 1,
+            'divisi_id' => 1,
+        ]);
         // $this->call(Anggara nSeeder::class);
     }
 }

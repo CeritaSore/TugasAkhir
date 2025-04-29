@@ -1,5 +1,6 @@
 <?php
 
+use App\View\Components\table;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -103,12 +104,7 @@ return new class extends Migration
             $table->string('tipe');
             $table->timestamps();
         });
-        # create organisasi event table
-        Schema::create('event_form_type', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipe');
-            $table->timestamps();
-        });
+
         # create organisasi event table
         Schema::create('event', function (Blueprint $table) {
             $table->id();
@@ -124,26 +120,25 @@ return new class extends Migration
             $table->foreign('proker_id')->references('id')->on('organisasi_program')->onDelete('cascade');
             $table->timestamps();
         });
-        # create organisasi event form table
         Schema::create('event_form', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
+            $table->string('nama_form');
             $table->unsignedBigInteger('event_id');
-            $table->unsignedBigInteger('type_id');
-            $table->unsignedBigInteger('input_type');
-            $table->timestamps();
             $table->foreign('event_id')->references('id')->on('event')->onDelete('cascade');
-            $table->foreign('input_type')->references('id')->on('event_form_type')->onDelete('cascade');
+            $table->timestamps();
         });
-        # create organisasi event form answer table
-        Schema::create('event_answer', function (Blueprint $table) {
+        Schema::create('form_type', function (Blueprint $table) {
             $table->id();
-            $table->string('jawaban');
+            $table->string('tipe');
+            $table->timestamps();
+        });
+        Schema::create('event_question', function (Blueprint $table) {
+            $table->id();
+            $table->string('question');
             $table->unsignedBigInteger('form_id');
-            $table->unsignedBigInteger('event_id');
             $table->unsignedBigInteger('type_id');
             $table->foreign('form_id')->references('id')->on('event_form')->onDelete('cascade');
-            $table->timestamps();
+            $table->foreign('type_id')->references('id')->on('form_type')->onDelete('cascade');
         });
     }
 
