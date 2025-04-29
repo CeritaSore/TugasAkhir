@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventFormController;
 use App\Models\OrganizationRole;
 use App\Models\OrganizationBudget;
 use Illuminate\Support\Facades\Route;
@@ -69,3 +70,5 @@ Route::get('/dashboard/organisasi/event/{slug}', [EventController::class, 'showE
 Route::post('/dashboard/organisasi/event/save', [EventController::class, 'storeEvent'])->name('store.event');
 Route::put('/dashboard/organisasi/event/{slug}/update', [EventController::class, 'updateEvent'])->name('update.event');
 Route::delete('/dashboard/organisasi/event/{slug}/delete', [EventController::class, 'deleteEvent'])->name('delete.event');
+// buat nyimpen pertanyaan sama jawaban
+Route::post('/dashboard/event/save', [EventFormController::class, 'storeform'])->name('form.save');

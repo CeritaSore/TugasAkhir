@@ -36,11 +36,7 @@
                                     <i class="icon-base bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu" style="">
-                                    <a class="dropdown-item" href="{{ route('show.event', $item->slug) }}"><i
-                                            class="icon-base bx bx-edit-alt me-1"></i>
-                                        Edit Acara</a>
-                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#detail{{ $item->id }}">
+                                    <a class="dropdown-item" href="{{ route('show.event', $item->slug) }}">
                                         <i class="icon-base bx bx-edit-alt me-1"></i>
                                         Detail Acara</a>
                                     <a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -98,21 +94,9 @@
                 </form>
             </x-modal>
             @foreach ($event as $item)
-                <x-modal modalId="detail{{ $item->id }}" modalTitle="Detail">
-                    <div class="card-title">
-                        <h4>nama acara : {{ $item->nama }}</h4>
-                        <h4>tipe : {{ $item->event_type->tipe }}</h4>
-                        <h4>deskripsi : {{ $item->deskripsi }}</h4>
-                        <h4>timeline : {{ \carbon\carbon::parse($item->tanggal_mulai)->format('d M Y') }} s/d
-                            {{ \carbon\carbon::parse($item->tanggal_selesai)->format('d M Y') }}</h4>
-                        <h4>program kerja : {{ $item->prokers->nama_program }}</h4>
-                    </div>
-                </x-modal>
-            @endforeach
-            @foreach ($event as $item)
                 <x-modal modalId="delete{{ $item->id }}" modalTitle="Detail">
                     <div class="card-title">
-                    <form action="{{ route('delete.event', $item->slug) }}" method="POST">
+                        <form action="{{ route('delete.event', $item->slug) }}" method="POST">
                             @csrf
                             @method('delete')
                             <h2>Yakin ingin menghapus acara {{ $item->nama }}</h2>

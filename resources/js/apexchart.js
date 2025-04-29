@@ -1,13 +1,11 @@
-import "./bootstrap";
-import "flowbite";
 import ApexCharts from "apexcharts";
 
 var options = {
     chart: {
-        type: 'pie',
-        height: 300 // atur di sini
+        type: "pie",
+        height: 300, // atur di sini
     },
-    labels: ['Apples', 'Bananas', 'Oranges'],
+    labels: ["Apples", "Bananas", "Oranges"],
     series: [44, 55, 41],
 };
 

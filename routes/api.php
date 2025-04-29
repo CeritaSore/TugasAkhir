@@ -63,10 +63,6 @@ Route::post('/dashboard/organisasi/event/{slug}/pendaftaran/save', [FormQuestion
 Route::put('/dashboard/organisasi/event/{slug}/pendaftaran/update', [FormQuestionController::class, 'updateForm']);
 Route::delete('/dashboard/organisasi/event/{slug}/pendaftaran/{id}/delete', [FormQuestionController::class, 'deleteForm']);
 
-#organisasi acara dan kegiatan(jawaban pendaftaran)
-Route::get('/dashboard/organisasi/event/{slug}/pendaftaran/jawaban', [AnswerController::class, 'index']);
-Route::post('/dashboard/organisasi/event/{slug}/pendaftaran/jawaban/save', [AnswerController::class, 'storeAnswer']);
-
 #organisasi anggaran
 Route::get('/dashboard/organisasi/anggaran', [OrganizationBudgetController::class, 'index']);
 Route::get('/dashboard/organisasi/anggaran/create-detail/{anggaran}',[OrganizationBudgetController::class,'showBudgetsDetail']);
