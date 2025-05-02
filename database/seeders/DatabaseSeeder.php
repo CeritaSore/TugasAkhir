@@ -7,10 +7,12 @@ use App\Models\User;
 use App\Models\Event;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\EventType;
+use App\Models\FormType;
 use App\Models\InputType;
 use App\Models\Organization;
 use App\Models\OrganizationCoreTeam;
 use App\Models\OrganizationDivision;
+use App\Models\OrganizationProgram;
 use Illuminate\Database\Seeder;
 use App\Models\OrganizationRole;
 
@@ -63,8 +65,12 @@ class DatabaseSeeder extends Seeder
                 'tipe' => $type,
             ]);
         }
-        // $inputType = ['text', 'textarea', 'number', 'date', 'time', 'file'];
-
+        $inputType = ['teks singkat', 'teks panjang', 'file',  'dropdown', 'skala likert(1-5)', 'skala likert(1-10)'];
+        foreach ($inputType as $input) {
+            FormType::create([
+                'tipe' => $input
+            ]);
+        }
 
         $divisi = ['divisi 1', 'divisi 2', 'divisi 3', 'divisi 4'];
         foreach ($divisi as $div) {
@@ -77,6 +83,23 @@ class DatabaseSeeder extends Seeder
             'organisasi_id' => 1,
             'role_id' => 1,
             'divisi_id' => 1,
+        ]);
+        OrganizationProgram::create([
+            'nama_program' => 'makan siang gratis',
+            'deskripsi' => null,
+            'tanggal_mulai' => '2012-12-12',
+            'tanggal_selesai' => '2012-12-12',
+            'tempat' => 'jadi',
+            'pelaksana' => '1',
+        ]);
+        Event::create([
+            'nama' => 'mbg sulawesi',
+            'deskripsi' => null,
+            'type_id' => 3,
+            'tanggal_mulai' => '2012-12-12',
+            'tanggal_selesai' => '2012-12-12',
+            'slug' => 'mbg-sulawesi',
+            'proker_id' => 1,
         ]);
         // $this->call(Anggara nSeeder::class);
     }

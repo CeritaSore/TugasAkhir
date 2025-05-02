@@ -26,6 +26,12 @@
         </div>
         <div class="col-12">
             <div class="card">
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <ul class="nav nav-underline justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#"data-bs-toggle="tab"
@@ -68,12 +74,21 @@
                                                 <i class="icon-base bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu" style="">
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item"
+                                                    href="{{ route('form.question', $registform->slug) }}">
                                                     <i class="icon-base bx bx-edit-alt me-1"></i>
-                                                    Detail Acara</a>
+                                                    Buat Form</a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                    Lihat Response</a>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('edit.question', $registform->slug) }}">
+                                                    <i class="icon-base bx bx-edit-alt me-1"></i>
+                                                    Edit Form</a>
+
                                                 <a class="dropdown-item" href="#" data-bs-toggle="modal"
                                                     data-bs-target="#delete"><i class="icon-base bx bx-trash me-1"></i>
-                                                    Delete</a>
+                                                    hapus</a>
                                             </div>
                                         </div>
                                     @endif
@@ -98,9 +113,17 @@
                                                 <i class="icon-base bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu" style="">
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item"
+                                                    href="{{ route('form.question', $feedbackform->slug) }}">
                                                     <i class="icon-base bx bx-edit-alt me-1"></i>
-                                                    Detail Acara</a>
+                                                    Buat Form</a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                    Lihat Response</a>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('edit.question', $feedbackform->slug) }}">
+                                                    <i class="icon-base bx bx-edit-alt me-1"></i>
+                                                    Edit Form</a>
                                                 <a class="dropdown-item" href="#" data-bs-toggle="modal"
                                                     data-bs-target="#delete"><i class="icon-base bx bx-trash me-1"></i>
                                                     Delete</a>

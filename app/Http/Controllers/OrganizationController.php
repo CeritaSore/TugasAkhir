@@ -76,13 +76,13 @@ class OrganizationController extends Controller
         $pengurus = OrganizationCoreTeam::count();
         $kegiatan = Event::count();
         $program = OrganizationProgram::count();
-        $anggaran = Expense::count();
+        // $anggaran = Expense::count();
         $data = [
             'status' => 'success',
             'organisasi' => $organisasi,
         ];
         // return response()->json($data);
-        return view('organisasi.index', compact('organisasi', 'pengurus', 'kegiatan', 'program', 'anggaran'));
+        return view('organisasi.index', compact('organisasi', 'pengurus', 'kegiatan', 'program'));
     }
     public function showProgram()
     {

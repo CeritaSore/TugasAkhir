@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventFormController;
+use App\Http\Controllers\FormQuestionController;
 use App\Models\OrganizationRole;
 use App\Models\OrganizationBudget;
 use Illuminate\Support\Facades\Route;
@@ -72,3 +73,7 @@ Route::put('/dashboard/organisasi/event/{slug}/update', [EventController::class,
 Route::delete('/dashboard/organisasi/event/{slug}/delete', [EventController::class, 'deleteEvent'])->name('delete.event');
 // buat nyimpen pertanyaan sama jawaban
 Route::post('/dashboard/event/save', [EventFormController::class, 'storeform'])->name('form.save');
+Route::get('/dashboard/event/form/{form}', [FormQuestionController::class, 'index'])->name('form.question');
+Route::get('/dashboard/event/form/{form}/edit', [FormQuestionController::class, 'showform'])->name('edit.question');
+Route::post('/dashboard/event/form/{form}/save', [FormQuestionController::class, 'store'])->name('save.question');
+Route::put('/dashboard/event/form/{form}/update', [FormQuestionController::class, 'updateForm'])->name('update.question');

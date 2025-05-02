@@ -124,6 +124,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_form');
             $table->unsignedBigInteger('event_id');
+            $table->string('slug');
             $table->foreign('event_id')->references('id')->on('event')->onDelete('cascade');
             $table->timestamps();
         });
@@ -137,6 +138,7 @@ return new class extends Migration
             $table->string('question');
             $table->unsignedBigInteger('form_id');
             $table->unsignedBigInteger('type_id');
+            $table->timestamps();
             $table->foreign('form_id')->references('id')->on('event_form')->onDelete('cascade');
             $table->foreign('type_id')->references('id')->on('form_type')->onDelete('cascade');
         });

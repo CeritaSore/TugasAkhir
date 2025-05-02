@@ -26,10 +26,10 @@ class Event extends Model
     {
         return $this->belongsTo(EventType::class, 'type_id');
     }
-    public function form()
-    {
-        return $this->hasMany(FormQuestion::class);
-    }
+    // public function form()
+    // {
+    //     return $this->hasMany(FormQuestion::class);
+    // }
     public function prokers()
     {
         return $this->belongsTo(OrganizationProgram::class, 'proker_id');
