@@ -10,6 +10,7 @@ use App\Models\EventType;
 use App\Models\FormType;
 use App\Models\InputType;
 use App\Models\Organization;
+use App\Models\OrganizationBudget;
 use App\Models\OrganizationCoreTeam;
 use App\Models\OrganizationDivision;
 use App\Models\OrganizationProgram;
@@ -91,6 +92,10 @@ class DatabaseSeeder extends Seeder
             'tanggal_selesai' => '2012-12-12',
             'tempat' => 'jadi',
             'pelaksana' => '1',
+        ]);
+        OrganizationBudget::create([
+            'jumlah_anggaran' => 123123,
+            'program_id' => 1
         ]);
         Event::create([
             'nama' => 'mbg sulawesi',

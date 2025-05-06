@@ -135,7 +135,11 @@
                         </x-table>
                     </div>
                     <div class="tab-pane fade" id="attendance-tab-pane" role="tabpanel" aria-labelledby="attendance-tab"
-                        tabindex="0">...</div>
+                        tabindex="0">
+                        <x-table :tableHeaders="['no', 'nama', 'status']">
+                            
+                        </x-table>
+                    </div>
                 </div>
 
             </div>

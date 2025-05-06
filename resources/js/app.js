@@ -7,7 +7,7 @@ var options = {
         type: 'pie',
         height: 300 // atur di sini
     },
-    labels: ['Apples', 'Bananas', 'Oranges'],
+    labels: ['Samsung', 'Apple', 'Xiaomi'],
     series: [44, 55, 41],
 };
 
